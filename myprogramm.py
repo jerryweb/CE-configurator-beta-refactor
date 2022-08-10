@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import re
 root = Tk()
 root.title("CE Configurator")
 root.geometry("500x500")
@@ -150,6 +151,9 @@ def resupplies():
 
 resupply = Button(root, text="Resupply enemy equipment or not", command=resupplies)
 resupply.grid(row=9,column=1)
+def savechanges():
+
+    return
 
 def lengthGame():
     lengthWindow = Toplevel(root)
@@ -157,13 +161,24 @@ def lengthGame():
     lengthWindow.title("Changing amount of points to win")
     lengthWindow.geometry('300x250')
 
-    with open("campaign_capture_the_flag.set", "r") as lengthFile:
-        ste = lengthFile.readlines()[43]
-        pointsVariable = ste
-        print(pointsVariable)
+    with open("campaign_capture_the_flag.set", "r+") as lengthFile:
+        pointsVariable = lengthFile.readlines()[43]
+        pointsReplace = lengthFile.readlines()
+        pointsReplace[1] = "lengthFile.readlines"
 
-    currentPoints = Entry(lengthWindow,textvariable=pointsVariable).grid(row=2,column=2,padx=60)
 
+    with open("campaign_capture_the_flag.set", "w") as lengthFile:
+          lengthFile.writelines(pointsReplace)
+          print(pointsVariable)
+
+
+    currentPoints = Entry(lengthWindow,textvariable=pointsVariable)
+    currentPoints.insert(0, pointsVariable)
+    currentPoints.grid(row=2,column=2,padx=60)
+
+
+    saveButton=Button(lengthWindow,text="Save changes", command=savechanges())
+    saveButton.grid(row=3,column=2,padx=60)
 
 
     tipLength = Label (lengthWindow, text ="Current 24000 mean aroun 30-35 minutes of defense so \ncount accordingly").grid(row=1,column=2)
