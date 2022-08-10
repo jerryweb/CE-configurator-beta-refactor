@@ -6,40 +6,91 @@ root.geometry("500x500")
 
 my_text = Text (root)
 
-def aiArmySize():
-    return
-
-def playerArmySize():
-    return
-
-def preparationTime():
-    return
-
-def resourceStarting():
-    return
-
-def resourceIncome():
-    return
-
-
-
 
 
 
 generallabel = Label(root, text="I want to change")
 generallabel.grid(row=1,column=1)
 
+def aiArmySize():
+    aiSizeWindow = Toplevel(root)
+
+    aiSizeWindow.title("Change AI army size")
+    aiSizeWindow.geometry('300x250')
+
+    aiMultiplier = StringVar()
+
+
+    aiMultiplierSpin = Spinbox(aiSizeWindow, from_=1.0, to=100.0, textvariable=aiMultiplier).grid(row=1, column=1)
+
+
+    aiMulitplierLabel = Label(aiSizeWindow, text="Current multiplier for AI is 7").grid(row=1, column=2)
+    return
+
 aiarmy = Button(root, text="AI army size", command=aiArmySize)
 aiarmy.grid(row=2,column=1)
+
+def playerArmySize():
+    playerSizeWindow = Toplevel(root)
+
+    playerSizeWindow.title("Enable or disable modded bullet damage")
+    playerSizeWindow.geometry('300x250')
+
+    playerMultiplier = StringVar()
+
+    playerMultiplierSpin = Spinbox(playerSizeWindow, from_=1.0, to=100.0, textvariable=playerMultiplier).grid(row=1, column=1)
+
+    playerMulitplierLabel = Label(playerSizeWindow, text="Multiply army size by").grid(row=1, column=2)
+    return
+
 
 playerarmy = Button(root, text="Player army size", command=playerArmySize)
 playerarmy.grid(row=3,column=1)
 
+def preparationTime():
+    preparationWindow = Toplevel(root)
+
+    preparationWindow.title("Minimum time before AI comes")
+    preparationWindow.geometry('300x250')
+
+    preparationTimes = StringVar()
+
+    preparationTimesspin = Spinbox(preparationWindow, from_=1.0, to=100.0, textvariable=preparationTimes).grid(row=1, column=1)
+
+    preparationTimeslabel = Label(preparationWindow, text="Minimum time in seconds before AI comes").grid(row=1, column=2)
+    return
+
 preparation = Button(root, text="Minimum preparation time", command=preparationTime)
 preparation.grid(row=4,column=1)
 
+def resourceStarting():
+    resourceStartingWindow = Toplevel(root)
+
+    resourceStartingWindow.title("Enable or disable modded bullet damage")
+    resourceStartingWindow.geometry('300x250')
+
+    researchPoints = StringVar()
+    manPowerPoints = StringVar()
+    starCallPoints = StringVar()
+    ammoPoints = StringVar()
+
+    researchPointsspin = Spinbox(resourceStartingWindow, from_=1.0, to=100.0, textvariable=researchPoints).grid(row=1, column=1)
+    manPowerPointspin = Spinbox(resourceStartingWindow, from_=1.0, to=100.0, textvariable=manPowerPoints).grid(row=2, column=1)
+    starCallPointsspin = Spinbox(resourceStartingWindow, from_=1.0, to=100.0, textvariable=starCallPoints).grid(row=3, column=1)
+    ammoPointsspin = Spinbox(resourceStartingWindow, from_=1.0, to=100.0, textvariable=ammoPoints).grid(row=4, column=1)
+
+
+    researchPointslabel=Label(resourceStartingWindow, text="Starting research points").grid(row=1, column=2)
+    manPowerPointlabel = Label(resourceStartingWindow, text="Starting manpower points").grid(row=2,column=2)
+    starCallPointslabel = Label(resourceStartingWindow,text="Starting star points").grid(row=3, column=2)
+    starCallPointslabel = Label(resourceStartingWindow, text="Starting ammo points").grid(row=4, column=2)
+    return
+
 resourcesStart = Button(root, text="Resources at start", command=resourceStarting)
 resourcesStart.grid(row=5,column=1)
+
+def resourceIncome():
+    return
 
 resources = Button(root, text="Resource Income", command=resourceIncome)
 resources.grid(row=6,column=1)
@@ -50,18 +101,18 @@ def aiFortifications():
     fortificationWindow.title("Enable or disable modded bullet damage")
     fortificationWindow.geometry('300x250')
 
-    firstLevel = StringVar()
+    #firstLevel = StringVar()
     secondLevel = StringVar()
     thirdLevel = StringVar()
 
-    firstLevelspin = Spinbox(fortificationWindow, from_=1.0, to=100.0, textvariable=firstLevel).grid(row=1, column=1)
+   # firstLevelspin = Spinbox(fortificationWindow, from_=1.0, to=100.0, textvariable=firstLevel).grid(row=1, column=1)
     secondLevelspin = Spinbox(fortificationWindow, from_=1.0, to=100.0, textvariable=secondLevel).grid(row=2, column=1)
     thirdLevelspin = Spinbox(fortificationWindow, from_=1.0, to=100.0, textvariable=thirdLevel).grid(row=3, column=1)
 
-    firstLevellabel=Label(fortificationWindow, text="Amount of missions played for first defense level to be researched").grid(row=1, column=2)
-    firstLevellabel = Label(fortificationWindow, text="Amount of missions played for second defense level to be researched").grid(row=2,
+   # firstLevellabel=Label(fortificationWindow, text="Amount of missions played for first defense level to be researched").grid(row=1, column=2)
+    secondLevellabel = Label(fortificationWindow, text="Amount of missions played for second defense level to be researched").grid(row=2,
                                                                                                             column=2)
-    firstLevellabel = Label(fortificationWindow,text="Amount of missions played for third defense level to be researched").grid(row=3,
+    thirdLevellabel = Label(fortificationWindow,text="Amount of missions played for third defense level to be researched").grid(row=3,
                                                                                                             column=2)
     return
 
