@@ -21,22 +21,8 @@ def resourceStarting():
 def resourceIncome():
     return
 
-def aiFortifications():
-    return
-
-def damages():
-    return
-
-def resupplies():
-    return
 
 
-
-def aiResearches():
-    return
-
-def regenerateAmmos():
-    return
 
 
 
@@ -58,11 +44,58 @@ resourcesStart.grid(row=5,column=1)
 resources = Button(root, text="Resource Income", command=resourceIncome)
 resources.grid(row=6,column=1)
 
+def aiFortifications():
+    fortificationWindow = Toplevel(root)
+
+    fortificationWindow.title("Enable or disable modded bullet damage")
+    fortificationWindow.geometry('300x250')
+
+    firstLevel = StringVar()
+    secondLevel = StringVar()
+    thirdLevel = StringVar()
+
+    firstLevelspin = Spinbox(fortificationWindow, from_=1.0, to=100.0, textvariable=firstLevel).grid(row=1, column=1)
+    secondLevelspin = Spinbox(fortificationWindow, from_=1.0, to=100.0, textvariable=secondLevel).grid(row=2, column=1)
+    thirdLevelspin = Spinbox(fortificationWindow, from_=1.0, to=100.0, textvariable=thirdLevel).grid(row=3, column=1)
+
+    firstLevellabel=Label(fortificationWindow, text="Amount of missions played for first defense level to be researched").grid(row=1, column=2)
+    firstLevellabel = Label(fortificationWindow, text="Amount of missions played for second defense level to be researched").grid(row=2,
+                                                                                                            column=2)
+    firstLevellabel = Label(fortificationWindow,text="Amount of missions played for third defense level to be researched").grid(row=3,
+                                                                                                            column=2)
+    return
+
 aiFortification = Button(root, text="AI defense stage research speed", command=aiFortifications)
 aiFortification.grid(row=7,column=1)
 
+def damages():
+    damageWindow = Toplevel(root)
+
+    damageWindow.title("Enable or disable modded bullet damage")
+    damageWindow.geometry('300x250')
+
+    damageMode = StringVar(value="Mod damage")
+
+    noResupply = Radiobutton(damageWindow, text="Mod damage", variable=damageMode,value="Mod damage").grid(row=1, column=1)
+    yesResupply = Radiobutton(damageWindow, text="Vanilla damage", variable=damageMode,value="Vanilla damage").grid(row=2, column=1)
+    return
+
+
 damage = Button(root, text="Vanilla or mod damage settings", command=damages)
 damage.grid(row=8,column=1)
+
+def resupplies():
+    resupplyWindow = Toplevel(root)
+
+    resupplyWindow.title("Enable or disable resupplying enemy equipment")
+    resupplyWindow.geometry('300x250')
+
+    resupplyAm = StringVar(value="No resupplying")
+
+    noResupply = Radiobutton(resupplyWindow, text="No resupplying enemy equipment", variable=resupplyAm, value="No resupplying").grid(row=1,column=1)
+    yesResupply = Radiobutton(resupplyWindow, text="Resupplying enemy equipment allowed", variable=resupplyAm,value="Resupplying everything").grid(row=2, column=1)
+    return
+
 
 resupply = Button(root, text="Resupply enemy equipment or not", command=resupplies)
 resupply.grid(row=9,column=1)
@@ -89,6 +122,19 @@ lengthGame = Button(root, text="Amount of points to win", command=lengthGame)
 lengthGame.grid(row=10,column=1)
 
 def aiResearches():
+    aiResearchWindow = Toplevel(root)
+
+    aiResearchWindow.title("Change the speed of AI research")
+    aiResearchWindow.geometry('400x350')
+
+    with open("campaign_capture_the_flag.set", "r") as lengthFile:
+        steee = lengthFile.readlines()[43]
+        researchSpeed = steee
+        print(researchSpeed)
+
+    regenerateAmmoSpeed = Entry(aiResearchWindow, textvariable=researchSpeed).grid(row=2, column=2, padx=60)
+
+    regenerateAmmoLabel = Label(aiResearchWindow, text="Choose the speed of AI researches").grid(row=1,column=2)
     return
 
 aiResearch = Button(root, text="AI research speed progression", command=aiResearches)
