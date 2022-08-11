@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import linecache
 import re
 root = Tk()
 root.title("CE Configurator")
@@ -151,38 +152,52 @@ def resupplies():
 
 resupply = Button(root, text="Resupply enemy equipment or not", command=resupplies)
 resupply.grid(row=9,column=1)
-def savechanges():
 
-    return
+
 
 def lengthGame():
     lengthWindow = Toplevel(root)
 
     lengthWindow.title("Changing amount of points to win")
-    lengthWindow.geometry('300x250')
+    lengthWindow.geometry('700x150')
+    currentLength= ""
+    with open("./resource/set/multiplayer/games/campaign_capture_the_flag.set", "r") as lengthFile:
+        wholeFile = lengthFile.read()
+        currentLength = linecache.getline(r"./resource/set/multiplayer/games/campaign_capture_the_flag.set", 44)
+        currentLength2 = r"[0-9][0-9][0-9][0-9][0-9]"
+        currentLength3 = str(re.findall(currentLength2,currentLength))
 
-    with open("campaign_capture_the_flag.set", "r+") as lengthFile:
-        pointsVariable = lengthFile.readlines()[43]
-        pointsReplace = lengthFile.readlines()
-        pointsReplace[1] = "lengthFile.readlines"
-
-
-    with open("campaign_capture_the_flag.set", "w") as lengthFile:
-          lengthFile.writelines(pointsReplace)
-          print(pointsVariable)
+        print(currentLength3)
 
 
-    currentPoints = Entry(lengthWindow,textvariable=pointsVariable)
-    currentPoints.insert(0, pointsVariable)
-    currentPoints.grid(row=2,column=2,padx=60)
 
 
-    saveButton=Button(lengthWindow,text="Save changes", command=savechanges())
-    saveButton.grid(row=3,column=2,padx=60)
+
+    def savechanges():
+        with open("./resource/set/multiplayer/games/campaign_capture_the_flag.set", "w") as lengthFile:
+            newLength=currentPoints.get()
+
+            lengthFile.write(wholeFile.replace(currentLength3,newLength))
+            print(lengthFile)
+
+    currentPoints = Entry(lengthWindow,textvariable=currentLength3,width=150)
+    currentPoints.delete(0, END)
+    currentPoints.insert(0, currentLength3)
+    currentPoints.grid(row=2,column=2)
 
 
-    tipLength = Label (lengthWindow, text ="Current 24000 mean aroun 30-35 minutes of defense so \ncount accordingly").grid(row=1,column=2)
-    return
+    saveButton = Button(lengthWindow, text="Save changes", command=savechanges)
+    saveButton.grid(row=3, column=2, padx=60)
+
+    tipLength = Label(lengthWindow,text="Current 24000 mean aroun 30-35 minutes of defense so \ncount accordingly").grid(row=1,column=2)
+
+
+
+
+
+
+
+
 
 lengthGame = Button(root, text="Amount of points to win", command=lengthGame)
 lengthGame.grid(row=10,column=1)
