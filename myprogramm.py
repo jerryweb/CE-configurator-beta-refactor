@@ -1,5 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
+from tkinter import ttk
+
 import linecache
 import re
 root = Tk()
@@ -129,8 +131,8 @@ def damages():
 
     damageMode = StringVar(value="Mod damage")
 
-    noResupply = Radiobutton(damageWindow, text="Mod damage", variable=damageMode,value="Mod damage").grid(row=1, column=1)
-    yesResupply = Radiobutton(damageWindow, text="Vanilla damage", variable=damageMode,value="Vanilla damage").grid(row=2, column=1)
+   # noResupply = Radiobutton(damageWindow, text="Mod damage", variable=damageMode,value="Mod damage").grid(row=1, column=1)
+   # yesResupply = Radiobutton(damageWindow, text="Vanilla damage", variable=damageMode,value="Vanilla damage").grid(row=2, column=1)
     return
 
 
@@ -141,13 +143,44 @@ def resupplies():
     resupplyWindow = Toplevel(root)
 
     resupplyWindow.title("Enable or disable resupplying enemy equipment")
-    resupplyWindow.geometry('300x250')
 
-    resupplyAm = StringVar(value="No resupplying")
 
-    noResupply = Radiobutton(resupplyWindow, text="No resupplying enemy equipment", variable=resupplyAm, value="No resupplying").grid(row=1,column=1)
-    yesResupply = Radiobutton(resupplyWindow, text="Resupplying enemy equipment allowed", variable=resupplyAm,value="Resupplying everything").grid(row=2, column=1)
-    return
+    resupplyAm = StringVar(value="notResupplying")
+
+    noResupply = Radiobutton(resupplyWindow, text="Resupplying enemy equipment NOT allowed", variable=resupplyAm,value="notResupplying")
+    noResupply.grid(row=1, column=1)
+    yesResupply = Radiobutton(resupplyWindow, text="Resupplying enemy equipment allowed", variable=resupplyAm,value="Resupplying")
+    yesResupply.grid(row=2,column=1)
+
+    def savechanges():
+       if resupplyAm.get()== "Resupplying":
+           with open("./resource/properties/resupply.inc", "r") as lengthFile:
+               wholeFile = lengthFile.read()
+            #   wholeFile = wholeFile.replace(
+           with open("./resource/properties/resupply.inc", "w") as lengthFile:
+               lengthFile.write(wholeFile)
+               print("normal")
+           messagebox.showinfo("Saved")
+           resupplyWindow.destroy()
+       else:
+           with open("./resource/properties/resupply.inc", "r") as lengthFile:
+               wholeFile = lengthFile.read()
+           #    wholeFile = wholeFile.replace(
+           messagebox.showinfo("Saved")
+           resupplyWindow.destroy()
+       # with open("./resource/set/multiplayer/games/campaign_capture_the_flag.set", "w") as lengthFile:
+
+           # newPoints=str(currentPoints.get())
+           # lengthFile.write(wholeFile.replace(currentLength4,newPoints))
+
+
+
+
+
+
+    saveButton = Button(resupplyWindow, text="Save changes", command=savechanges)
+    saveButton.grid(row=3, column=2, padx=3)
+
 
 
 resupply = Button(root, text="Resupply enemy equipment or not", command=resupplies)
@@ -199,19 +232,29 @@ lengthGame.grid(row=10,column=1)
 
 def aiResearches():
     aiResearchWindow = Toplevel(root)
-
     aiResearchWindow.title("Change the speed of AI research")
     aiResearchWindow.geometry('400x350')
+    if difficulty.get() == "performance":
+        with open("./resource/set/dynamic_campaign/dcg_easy.inc", "r") as lengthFile:
+           wholeFile = lengthFile.read()
+           print("easy")
+    elif difficulty.get() == "normal":
+        with open("./resource/set/dynamic_campaign/dcg_normal.inc", "r") as lengthFile:
+             wholeFile = lengthFile.read()
+             wholeFile = wholeFile.replace('{ResearchStages "0:1 1:2 2:3 3:4 4:5 5:6 6:7 7:8 8:9 9:10 10:11 11:12 12:13 13:14 14:15 15:16 16:17 17:18 18:19 19:20"}','{ResearchStages "0:2 1:2 2:3 3:4 4:5 5:6 6:7 7:8 8:9 9:10 10:11 11:12 12:13 13:14 14:15 15:16 16:17 17:18 18:19 19:20"}')
+        with open("./resource/set/dynamic_campaign/dcg_normal.inc", "w") as lengthFile:
+             lengthFile.write(wholeFile)
+             print("normal")
+    elif difficulty.get() == "hard":
+        with open("./resource/set/dynamic_campaign/dcg_hard.inc", "r") as lengthFile:
+             wholeFile = lengthFile.read()
 
-    with open("campaign_capture_the_flag.set", "r") as lengthFile:
-        steee = lengthFile.readlines()[43]
-        researchSpeed = steee
-        print(researchSpeed)
+             print("hard")
+    elif difficulty.get() == "unfair":
+        with open("./resource/set/dynamic_campaign/dcg_heroic.inc", "r") as lengthFile:
+             wholeFile = lengthFile.read()
 
-    regenerateAmmoSpeed = Entry(aiResearchWindow, textvariable=researchSpeed).grid(row=2, column=2, padx=60)
-
-    regenerateAmmoLabel = Label(aiResearchWindow, text="Choose the speed of AI researches").grid(row=1,column=2)
-    return
+             print("unfair")
 
 aiResearch = Button(root, text="AI research speed progression", command=aiResearches)
 aiResearch.grid(row=11,column=1)
@@ -219,20 +262,12 @@ aiResearch.grid(row=11,column=1)
 def regenerateAmmos():
     regenerateAmmosWindow = Toplevel(root)
 
-    regenerateAmmosWindow.title("Changing amount of points to win")
+    regenerateAmmosWindow.title("Make trucks regenerate ammo")
     regenerateAmmosWindow.geometry('400x350')
 
-    with open("campaign_capture_the_flag.set", "r") as lengthFile:
+    with open("./resource/properties/resupply.inc", "r") as lengthFile:
         ste = lengthFile.readlines()[43]
-        resupplySpeed = ste
-        print(resupplySpeed)
 
-    regenerateAmmoSpeed = Entry(regenerateAmmosWindow, textvariable=resupplySpeed).grid(row=2, column=2, padx=60)
-
-    regenerateAmmoLabel = Label(regenerateAmmosWindow,
-                      text="Choose how many resupplies per second should be regenerated").grid(row=1,
-                                                                                                            column=2)
-    return
 
 regenerateAmmo = Button(root, text="Make supply trucks regenerate ammo", command=regenerateAmmos)
 regenerateAmmo.grid(row=12,column=1)
@@ -242,15 +277,30 @@ regenerateAmmo.grid(row=12,column=1)
 #epoint = Entry(root, width=20)
 
 #epoint.pack()
+def typedifficulty():
+    print(difficulty.get())
 
+global difficulty
 difficulty = StringVar(value="normal")
-performance =Radiobutton(root, text="performance(easy)", variable=difficulty,value="performance").grid(row=5,column=6)
-normal = Radiobutton(root, text="normal", variable=difficulty,value="normal").grid(row=2,column=6)
-hard = Radiobutton(root, text="hard", variable=difficulty,value="hard").grid(row=3,column=6)
-unfair = Radiobutton(root, text="unfair", variable=difficulty,value="unfair").grid(row=4,column=6)
+performance =Radiobutton(root, text="performance(easy)", variable=difficulty,value="performance",command=typedifficulty).grid(row=5,column=2)
+normal = Radiobutton(root, text="normal", variable=difficulty,value="normal",command=typedifficulty).grid(row=2,column=2)
+hard = Radiobutton(root, text="hard", variable=difficulty,value="hard",command=typedifficulty).grid(row=3,column=2)
+unfair = Radiobutton(root, text="unfair", variable=difficulty,value="unfair",command=typedifficulty).grid(row=4,column=2)
 
-choosedifficulty =Label(root, text="Choose your difficulty before changing anything").grid(row=1,column=5,columnspan=2)
-#print(difficulty)
+choosedifficulty =Label(root, text="Choose your difficulty before changing anything").grid(row=1,column=2)
+
+def typelength():
+    print(campLength.get())
+campLength = StringVar(value="short")
+shortLength =Radiobutton(root, text="short", variable=campLength,value="short",command=typelength).grid(row=7,column=2)
+normalLength = Radiobutton(root, text="normal", variable=campLength,value="normal",command=typelength).grid(row=8,column=2)
+longLength = Radiobutton(root, text="long", variable=campLength,value="long",command=typelength).grid(row=9,column=2)
+vLongLength = Radiobutton(root, text="very long", variable=campLength,value="very long",command=typelength).grid(row=10,column=2)
+unlimited = Radiobutton(root, text="unlimited", variable=campLength,value="unlimited",command=typelength).grid(row=11,column=2)
+chooseLength =Label(root, text="Choose your campaign Length").grid(row=6,column=2)
+
+
+
 
 #def checking ():
    # global difficulty
