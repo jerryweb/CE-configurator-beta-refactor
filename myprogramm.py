@@ -164,35 +164,30 @@ def lengthGame():
     with open("./resource/set/multiplayer/games/campaign_capture_the_flag.set", "r") as lengthFile:
         wholeFile = lengthFile.read()
         currentLength = linecache.getline(r"./resource/set/multiplayer/games/campaign_capture_the_flag.set", 44)
-        currentLength2 = r"[0-9][0-9][0-9][0-9][0-9]"
-        currentLength3 = str(re.findall(currentLength2,currentLength))
-
-        print(currentLength3)
-
-
-
+        currentLength2 = r"[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]"
+        currentLength3 = str((re.findall(currentLength2,currentLength)))
+        currentLength4 = currentLength3.strip("[']")
 
 
     def savechanges():
         with open("./resource/set/multiplayer/games/campaign_capture_the_flag.set", "w") as lengthFile:
-            newLength=currentPoints.get()
 
-            lengthFile.write(wholeFile.replace(currentLength3,newLength))
-            print(lengthFile)
+            newPoints=str(currentPoints.get())
+            lengthFile.write(wholeFile.replace(currentLength4,newPoints))
+            messagebox.showinfo("Saved")
+            lengthWindow.destroy()
 
-    currentPoints = Entry(lengthWindow,textvariable=currentLength3,width=150)
+
+    currentPoints = Entry(lengthWindow,textvariable=currentLength4,width=15)
     currentPoints.delete(0, END)
-    currentPoints.insert(0, currentLength3)
+    currentPoints.insert(0, currentLength4)
     currentPoints.grid(row=2,column=2)
 
 
     saveButton = Button(lengthWindow, text="Save changes", command=savechanges)
-    saveButton.grid(row=3, column=2, padx=60)
+    saveButton.grid(row=3, column=2, padx=3)
 
     tipLength = Label(lengthWindow,text="Current 24000 mean aroun 30-35 minutes of defense so \ncount accordingly").grid(row=1,column=2)
-
-
-
 
 
 
