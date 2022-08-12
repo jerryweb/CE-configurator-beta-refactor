@@ -20,12 +20,12 @@
 			{level_2							;// once level is reached previous level values are ignored only currently level is used
 				{DefenseBudgetPlayer	1200.0}
 				{DefenseBudgetAI		1200.0}
-				{unlock games 5 progress 0.4}
+				{unlock games 7 progress 0.4}
 			}
 			{level_3
 				{DefenseBudgetPlayer	404.5}
 				{DefenseBudgetAI		444.5}
-				{unlock games 14 progress 0.75}
+				{unlock games 16 progress 0.75}
 			}
 		}
 	}

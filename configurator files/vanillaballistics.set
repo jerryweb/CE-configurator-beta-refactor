@@ -1,0 +1,78 @@
+; Profiles for various weapon classes. Defines how the damage to human health is adjusted over distance.
+; 1st value is distance (weapon range multiplied by value)(example: weapon range 100m & value 0.5 = 50m)
+; 2nd value is damage (weapon damage multiplied by value)(example: weapon damage 50 & value 0.5 = -25 health)
+;	{curve "example"
+;		{0.75	0.5}		at 75% of weapons max range, it does 50% of defined damage from weapon file
+
+{ballistics
+	{curve "bullet"			;// bolt action rifles with increased damage at close range
+		{0.05	5.00}		;// 6m   350d
+		{0.10	2.11}		;// 12m  148d
+		{0.3	1.11}		;// 40m  78d
+		{0.5	0.65}		;// 60m  46d
+		{0.9	0.28}		;// 108m 20d
+		{2.0	0.18}		;// 240m 13d
+	}
+	
+	{curve "bullet_sniper"	;// sniper rifles 
+		{0.05	5.00}		;// 6m   350d
+		{0.10	2.11}		;// 12m  148d
+		{0.3	1.11}		;// 40m  78d
+		{0.5	0.65}		;// 60m  46d
+		{1.0	0.28}		;// 108m 20d
+		{1.5	0.03}		;// 240m 15d
+	}
+
+	{curve "autorifle"		;// automatic, semi-automatic, battle and assault rifles
+		{0.05	3.60}		;// 6m   250d
+		{0.10	2.11}		;// 12m  148d
+		{0.3	1.11}		;// 40m  78d 
+		{0.5	0.65}		;// 60m  46d
+		{0.9	0.28}		;// 108m 20d
+		{2.0	0.18}		;// 240m 13s
+	}
+
+	{curve "bullet_mg"		;// machine guns, damage 80
+		{0.05	1.25}		;// 6m    100d
+		{0.183	0.85}		;// 22m   68d
+		{0.4	0.55}		;// 48m   44d
+		{1.0	0.33}		;// 120m  26.4d
+		{2.0	0.17}		;// 240m  13.6d
+	}
+
+	{curve "bullet_hmg"		;// machine guns, damage 160
+		{0.07	1.25}		;// 10m   200d
+		{0.183	0.85}		;// 25m   136d
+		{0.5	0.55}		;// 70m   88d
+		{1.0	0.4}		;// 140m  64d
+		{2.0	0.15}		;// 280m  24d
+	}
+
+	{curve "bullet_smg"		;// sub-machine guns, damage 65
+		{0.0	1.5}		;// 0m   83d
+		{0.2	1.0}		;// 16m  55d
+		{0.5	0.50}		;// 40m  27d
+		{1.0	0.35}		;// 80m  20d
+		{1.5	0.15}		;// 120m 8d
+	}
+
+	{curve "bullet_pistol"	;// pistols
+		{0.05	3.0}
+		{0.2	1.0}
+		{1.0	0.55}
+		{2.0	0.12}
+	}
+
+	{curve "shotgun"
+		{0.1	3.25}
+		{0.4	1.0}
+		{0.5	0.4}
+		{1.0	0.3}
+		{2.0	0.05}
+	}
+
+	{curve "gun_std"		;// all other weapons / cannons
+		{0		1.0}
+		{1		1.0}
+	}
+}
