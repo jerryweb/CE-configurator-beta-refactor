@@ -91,7 +91,7 @@
 				}
 			}
 			{Budget
-				{Start "0:441 4:441 8:441 12:441 16:441 20:441"} ;// games played : starting CP of each match 
+				{Start "0:441"} ;// games played : starting CP of each match 
 				{PointsPerSecond 0} ;// CP income
 				{Limit 1001} ;// Max CP 
 			}

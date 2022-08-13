@@ -1,6 +1,6 @@
 {Normal
 	{GlobalMaxCP 1900}
-	{StageCP 110 110 110 110 110 110 110}
+	{StageCP 11 11 11 11 11 11 11 } 
 	{SpecialCP 1001}					;// airstrikes special tab
 	{EmplacementCP 50}				;// buildable with engineer
 	{Bots
@@ -20,12 +20,12 @@
 			{level_2							;// once level is reached previous level values are ignored only currently level is used
 				{DefenseBudgetPlayer	200.0}
 				{DefenseBudgetAI		200.0}
-				{unlock games 5 progress 0.4}
+				{unlock games 7}
 			}
 			{level_3
 				{DefenseBudgetPlayer	404.5}
 				{DefenseBudgetAI		444.5}
-				{unlock games 14 progress 0.75}
+				{unlock games 16}
 			}
 		}
 	}
@@ -34,17 +34,17 @@
 	{ScavengedVehicleSellFactor 0.5}		;// captured enemy vehicle 
 	{RiskFactor
 		{Low
-			{BotResources 7.0}
+			{BotResources 6.0}
 			{BotVeterancy 1}
 			{Rewards 1.0}
 		}
 		{Standard
-			{BotResources 7.0}
+			{BotResources 6.0}
 			{BotVeterancy 3}
 			{Rewards 1.5}
 		}
 		{High
-			{BotResources 7.0}
+			{BotResources 6.0}
 			{BotVeterancy 5}
 			{Rewards 2.00}
 		}
@@ -52,7 +52,7 @@
 	{Resources
 		{Standard
 			{MP ;// Manpower (generic money)
-				{StartVal 5000}
+				{StartVal 5003}
 				{WinGain "1:200 4:300 6:700 8:900 10:1000 12:1400 14:1700"} ;// games played : MP gain 
 				{LoseGain "1:200 4:300 6:700 8:900 10:1000 12:1400 14:1700"}
 				{MapRewards	;//Bonus resources on various game types (a game can only be one randomly chosen type). Types: Airfield, Ammodepot, Bonus, Factory, Research.
@@ -64,7 +64,7 @@
 				}
 			}
 			{SP ;// Special Points (airstrikes)
-				{StartVal 0}
+				{StartVal 4}
 				{WinGain "1:2 4:5 6:7 8:6 10:9 12:10 14:12"}
 				{LoseGain "1:2 4:5 6:7 8:6 10:9 12:10 14:12"}
 				{MapRewards
@@ -72,7 +72,7 @@
 				}
 			}
 			{AP ;// Ammo points
-				{StartVal 2500}
+				{StartVal 2502}
 				{WinGain "5:300 10:500 15:800"}
 				{LoseGain "5:300 10:500 15:800"}
 				{MapRewards
@@ -81,7 +81,7 @@
 				}
 			}
 			{RP ;// Research points
-				{StartVal 14}
+				{StartVal 15}
 				{WinGain "1:3 4:3 5:3 6:8 7:5 12:6"}
 				{LoseGain "1:3 4:3 5:3 6:8 7:5 12:6"}
 				{MapRewards
@@ -91,7 +91,7 @@
 				}
 			}
 			{Budget
-				{Start "0:551 4:551 8:551 12:551 16:551 20:551"} ;// games played : starting CP of each match 
+				{Start 0:"5511"}
 				{PointsPerSecond 0} ;// CP income
 				{Limit 1001} ;// Max CP 
 			}
