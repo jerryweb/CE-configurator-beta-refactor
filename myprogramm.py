@@ -209,9 +209,10 @@ def playerArmySize():
 
 
             newf = (wholeFile.replace(currentLength, str(f"	{{StageCP {newPoints2} }} \n")))
-            newf2 = (newf.replace(currentLength1, str(f'				{{Start 0:"{newPoints3}"}}\n')))
+            newf2 = (newf.replace(currentLength1, str(f'				{{Start "0:{newPoints3}"}}\n')))
 
             lengthFile.write(newf2)
+            messagebox.showinfo("Saved")
             playerSizeWindow.destroy()
 
     currentPoints = Entry(playerSizeWindow, textvariable=eachStageSize, width=50)
