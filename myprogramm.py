@@ -93,7 +93,7 @@ def aiArmySize():
     saveButton = Button(aiSizeWindow, text="Save changes", command=savechanges)
     saveButton.grid(row=3, column=2, padx=3)
 
-    aiSizeWindow = Label(aiSizeWindow,text=f"Current AI army size multiplier is {currentLength5}").grid(row=1, column=2)
+    aiSizeWindow = Label(aiSizeWindow,text=f"Current AI army size multiplier is {currentLength5}. Normally it's between 6 and 7").grid(row=1, column=2)
 
 aiarmy = Button(root, text="AI army size", command=aiArmySize)
 aiarmy.grid(row=2,column=1)
@@ -227,7 +227,7 @@ def playerArmySize():
     saveButton = Button(playerSizeWindow, text="Save changes", command=savechanges)
     saveButton.grid(row=4, column=1, padx=3)
 
-    playerLabel = Label(playerSizeWindow, text=f"Size of each stage. keep the space between each number").grid(row=1,column=1)
+    playerLabel = Label(playerSizeWindow, text=f"Size of each stage. keep the space between each number and it should be 7 numbers").grid(row=1,column=1)
     playerLabel2 = Label(playerSizeWindow, text=f"How much points you have in the battle to buy these stages(in mod you're supposed to only have enough for 5)").grid(row=3, column=1)
 
 
@@ -549,9 +549,9 @@ def resourceIncome():
     highRisk = StringVar()
 
 
-    lowRiskspin = Spinbox(resourceIncWindow, from_=1.00, to=100.00, textvariable=lowRisk).grid(row=2,column=1)
-    standartRiskspin = Spinbox(resourceIncWindow, from_=1.00, to=100.00, textvariable=standartRisk).grid(row=3,column=1)
-    highRiskspin = Spinbox(resourceIncWindow, from_=1.00, to=100.00, textvariable=highRisk).grid(row=4,column=1)
+    lowRiskspin = Spinbox(resourceIncWindow, from_=1.00, to=100.00, textvariable=lowRisk).grid(row=3,column=1)
+    standartRiskspin = Spinbox(resourceIncWindow, from_=1.00, to=100.00, textvariable=standartRisk).grid(row=4,column=1)
+    highRiskspin = Spinbox(resourceIncWindow, from_=1.00, to=100.00, textvariable=highRisk).grid(row=5,column=1)
 
 
     if difficulty.get() == "performance":
@@ -657,9 +657,9 @@ def resourceIncome():
 
 
     saveButton = Button(resourceIncWindow, text="Save changes", command=savechanges)
-    saveButton.grid(row=5, column=1, padx=3)
+    saveButton.grid(row=6, column=1, padx=3)
 
-    infoLabel = Label (resourceIncWindow, text="This is a multiplier depending on the risk level of the mission. You can type any number you want")
+    infoLabel = Label (resourceIncWindow, text="This is a multiplier depending on the risk level (Stars) of the mission.\n First is 1 star,second is 2 star and third is 3 star.")
     infoLabel.grid(row=1, column=1, padx=3)
 
 
@@ -948,7 +948,7 @@ def lengthGame():
     saveButton = Button(lengthWindow, text="Save changes", command=savechanges)
     saveButton.grid(row=3, column=2, padx=3)
 
-    tipLength = Label(lengthWindow,text="Current 24000 mean aroun 30-35 minutes of defense so \ncount accordingly").grid(row=1,column=2)
+    tipLength = Label(lengthWindow,text=" 24000 mean around 30-35 minutes of defense so \ncount accordingly").grid(row=1,column=2)
 
 
 
@@ -1188,8 +1188,14 @@ def typedifficulty():
 #button_setting.pack()
 
 def showhelp():
-    messagebox.showinfo("Info about the programme","")
+    helpWindow = Toplevel(root)
+    textLabel = Label(helpWindow,text="This programme allows you to easily edit mod files. \n But the guide linked in the mod description \n is still the safest way to edit the game.\n If you have any questions about this programme please message me \n in discord linked in the description or in official GoH discord.").grid(row=1,column=1)
+
+
+
+
 Button(root, text="help", command=showhelp).grid(row=15,column=2)
+madeBy=Label(root, text="made by MrCookie for Conquest Enhanced mod.\n The code will be available on github if you want to do\n something like that for your mod.").grid (row=14,column=1)
 
 root.mainloop()
 
