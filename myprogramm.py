@@ -1078,7 +1078,6 @@ def aiResearches():
 
 
 
-
 aiResearch = Button(root, text="AI research speed progression", command=aiResearches)
 aiResearch.grid(row=11,column=1)
 
@@ -1247,7 +1246,7 @@ def openPeriod():
            with open("./resource/set/dynamic_campaign/unit_research_rus.set", "w") as lengthFile:
                lengthFile.write(rusRess)
 
-
+           aiResearch.config(state="normal")
            messagebox.showinfo("Saved")
            campaignPeriod.destroy()
 
@@ -1358,6 +1357,7 @@ def openPeriod():
         with open("./resource/set/dynamic_campaign/unit_research_rus.set", "w") as lengthFile:
             lengthFile.write(rusRess)
 
+        aiResearch.config(state="disabled")
         messagebox.showinfo("Saved")
         campaignPeriod.destroy()
     def setMidPeriod():
@@ -1467,6 +1467,7 @@ def openPeriod():
         with open("./resource/set/dynamic_campaign/unit_research_rus.set", "w") as lengthFile:
             lengthFile.write(rusRess)
 
+        aiResearch.config(state="disabled")
         messagebox.showinfo("Saved")
         campaignPeriod.destroy()
     def setLatePeriod():
@@ -1576,8 +1577,10 @@ def openPeriod():
         with open("./resource/set/dynamic_campaign/unit_research_rus.set", "w") as lengthFile:
             lengthFile.write(rusRess)
 
+        aiResearch.config(state="disabled")
         messagebox.showinfo("Saved")
         campaignPeriod.destroy()
+
 
     def leav():
         campaignPeriod.destroy()
