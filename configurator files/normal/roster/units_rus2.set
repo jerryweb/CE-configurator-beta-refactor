@@ -1,0 +1,228 @@
+;SDL
+
+;////////////////// INSTRUCTIONS //////////////////
+;Buttons go as follows, displayed in-game in this order:
+
+; inf1       - infantry squads
+; inf2       - infantry single units
+; empl       - Emplacements, AA, AT, Mortars, Howitzers
+; vehicles   - vehicles, armoured cars, supplies
+; tanks      - main battle tanks, TDs, SPGs
+; doctrine   - specific doctrine setups
+
+; TEMP: Note all levels have been brought down to 1 to remove unit locks.
+; Squads currently have an MP cost of 0 - their cost is currently calculated as the sum of their soldiers cost, see inf_ger.set
+; Check ../settings.set for syntax instructions!!
+; unit limits per game are not defined here but in gamemode presets
+
+;user defined set tags that should be featured on units:
+;all artillery heavyart cannon mediumcan heavycan light medium heavy infantry supply
+;these tags allow player to disable certain sets for custom setups like "no heavy artillery"
+;//////////////////////////////////////////////////
+
+
+{"squad_rus_paras_con"
+	("squad_vehicle10"		 side(rus) period(mid) min_stage(7) max_stage(99) cw(3) cp(5) vehicle(il2_mod42_para_plane) crew1(pilot:1) crew2(para_1:1) crew3(para_2:1) crew4(para_4:1) crew5(para_mg:2) crew6(para_mg_asst:2) crew7(para_1:1) crew8(para_3:1) crew9(para_2:2) crew10(para_nco:1)) {not_for_player_sale 1}
+}
+
+{"squad_rus_paras_con_late"
+	("squad_vehicle10"		 side(rus) period(late) min_stage(7) max_stage(99) cw(3) cp(5) vehicle(il2_mod42_para_plane) crew1(pilot:1) crew2(spetsnaz_5:1) crew3(spetsnaz_1:1) crew4(spetsnaz_1:1) crew5(spetsnaz_4:2) crew6(spetsnaz_2:2) crew7(spetsnaz_1:1) crew8(spetsnaz_3:1) crew9(spetsnaz_3:2) crew10(spetsnaz_3:1)) {not_for_player_sale 1}
+}
+
+{"ba20_command"
+	("vehicle2" side(rus) period(mid) min_stage(2) max_stage(99) cw(2) cp(25) crew1(tankman:2) crew2(commisar:1))
+	{cost 250}
+}
+
+("squad_with1types_conquest" side(rus) period(mid) min_stage(1) max_stage(99) name(single_engineer_ai_1)		c1(engineer_1:1)) {not_for_player_sale 1}
+("squad_with1types_conquest" side(rus) period(mid) min_stage(1) max_stage(99) name(single_engineer_ai_2)		c1(engineer_2:1)) {not_for_player_sale 1}
+
+;|                  Emplacements                  |
+;|________________________________________________|
+
+
+{"ap_2_universal"
+	("vehicle"  side(rus) period(mid) min_stage(1) max_stage(99) cw(1) cp(0) crew(rifleman_1:2))
+	{cost 900}
+}
+
+
+;AUTOMATIC WEAPONRY
+{"heavy_mg_maxim"
+	("emplacement" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) crew(mgun_2:4) condition(barricade) action(heavy_mg_maxim))
+	{cost 8}{not_for_player_sale 1} 
+}
+{"heavy_mg_dshk_aa"
+	("emplacement" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(5) crew(mgun_2:2) condition(barricade) action(dshk_aa))
+	{cost 12}{not_for_player_sale 1}
+}
+{"heavy_mg_dshk_stan"
+	("emplacement" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(5) crew(mgun_2:2) condition(barricade) action(dshk_stan))
+	{cost 1}{not_for_player_sale 1}
+}
+
+{"heavy_mg_25mm_72k"
+	("emplacement" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:3) condition(barricade) action(25mm_72k))
+	{cost 2}{not_for_player_sale 1}
+}
+{"heavy_mg_37mm_61k"
+	("emplacement" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:3) condition(barricade) action(37mm_61k))
+	{cost 2}{not_for_player_sale 1}
+}
+{"heavy_mg_85mm_52k"
+	("emplacement" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(85mm_52k))
+	{cost 4}{not_for_player_sale 1}
+}
+{"broneschitok_1"
+	("emplacement" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(broneschitok_1))
+	{cost 4}{not_for_player_sale 1}
+}
+
+; AT WEAPONRY
+{"heavy_mg_m41_ampulomet"
+	("emplacement" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(5) crew(rifleman_1:2) condition(barricade) action(m41_ampulomet))
+	{cost 2}{not_for_player_sale 1}
+}
+{"heavy_mg_45mm_m37"
+	("emplacement" side(rus) period(mid) min_stage(12) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(45mm_m37))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_45mm_m42"
+	("emplacement" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(45mm_m42))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_57mm_zis2"
+	("emplacement" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(57mm_zis2))
+	{cost 3}{not_for_player_sale 1}
+}
+{"heavy_mg_76mm_f22"
+	("emplacement" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(76mm_f22))
+	{cost 2}{not_for_player_sale 1}
+}
+{"heavy_mg_76mm_zis3"
+	("emplacement" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(76mm_zis3))
+	{cost 2}{not_for_player_sale 1}
+}
+{"heavy_mg_82mm_bm37"
+	("emplacement"  side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) crew(rifleman_1:2)condition(barricade) action(82mm_bm37))
+	{cost 250}{not_for_player_sale 1}
+}
+{"heavy_mg_120mm_pm38"
+	("emplacement"  side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) crew(rifleman_1:2)condition(barricade) action(120mm_pm38))
+	{cost 250}{not_for_player_sale 1}
+}
+{"heavy_mg_76mm_m43"
+	("emplacement"  side(rus) period(mid) min_stage(6) max_stage(99) cw(0) cp(0) crew(artilleryman:4)condition(barricade) action(76mm_m43))
+	{cost 350}{not_for_player_sale 1}
+}
+{"heavy_mg_107mm_m1910_30"
+	("emplacement"  side(rus) period(mid) min_stage(3) max_stage(99) cw(0) cp(0) crew(artilleryman:4)condition(barricade) action(107mm_m1910_30))
+	{cost 400}{not_for_player_sale 1}
+}
+{"heavy_mg_sg43_stand"
+	("vehicle" side(rus) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:4) condition(barricade) action(sg43_stand))
+	{cost 1}{not_for_player_sale 1}
+}
+
+{"heavy_mg_100mm_bs3"
+	("emplacement"  side(rus) period(mid) min_stage(10) max_stage(99) cw(0) cp(15) crew(artilleryman:4)condition(barricade) action(100mm_bs3))
+	{cost 680}{not_for_player_sale 1}
+}
+
+{"il2_mod42"
+	("squad_vehicle" side(rus) period(mid)  min_stage(1) max_stage(99) cw(0) cp(10) crew(pilot:1) vehicle(il2_mod42))
+	{cost 4}{not_for_player_sale 1}
+}
+{"bm13_studebakerai"
+	("vehicle"  side(rus) period(mid) min_stage(9) max_stage(99) cw(0) cp(10) crew(tankman:2))
+	{cost 1500}{not_for_player_sale 1}
+}
+{"bm31_12ai"
+	("vehicle"  side(rus) period(mid) min_stage(13) max_stage(99) cw(0) cp(10) crew(tankman:2))
+	{cost 1900}{not_for_player_sale 1}
+}
+{"122mm_m30ai"
+	("vehicle"  side(rus) period(mid) min_stage(9) max_stage(99) cw(0) cp(5) crew(artilleryman:4))
+	{cost 750}{not_for_player_sale 1}
+}
+{"122mm_a19ai"
+	("vehicle"  side(rus) period(mid) min_stage(9) max_stage(99) cw(0) cp(5) crew(artilleryman:4))
+	{cost 900}{not_for_player_sale 1}
+}
+{"152mm_ml20ai"
+	("vehicle"  side(rus) period(mid) min_stage(9) max_stage(99) cw(0) cp(5) crew(artilleryman:5))
+	{cost 1000}{not_for_player_sale 1}
+}
+{"152mm_br2ai"
+	("vehicle"  side(rus) period(mid) min_stage(6) max_stage(99) cw(0) cp(5) crew(artilleryman:5))
+	{cost 950}{not_for_player_sale 1}
+}
+{"203mm_b4ai"
+	("vehicle"  side(rus) period(mid) min_stage(9) max_stage(99) cw(0) cp(5) crew(artilleryman:5))
+	{cost 1500}{not_for_player_sale 1}
+}
+{"280mm_br5ai"
+	("vehicle"  side(rus) period(mid) min_stage(9) max_stage(99) cw(0) cp(5) crew(artilleryman:5))
+	{cost 1750}{not_for_player_sale 1}
+}
+
+
+
+;"planerus"
+    ("squad_vehicle2" side(rus) period(mid)  min_stage(1) max_stage(99) cw(0) cp(10)  crew1(pilot:1) crew2(pilot:0) vehicle(il2_mod42player))
+    {cost 4}
+
+
+;_______________________________________________
+;|					Aircraft					|
+;|______________________________________________|
+
+{"light_mortar_barrage"
+    ("squad_vehicle" side(rus) period(mid)  min_stage(1) max_stage(99) cw(0) cp(10) crew(pilot:0) vehicle(heavy_mg_mg34))
+    {cost 3}
+    {action "airstrike:light_mortar_barrage"}
+}
+{"heavy_artillery_barrage"
+    ("squad_vehicle" side(rus) period(mid)  min_stage(1) max_stage(99) cw(0) cp(10) crew(pilot:0) vehicle(heavy_mg_maxim))
+    {cost 0}
+    {action "airstrike:heavy_arty_barrage"}
+}
+{"smoke_cover_callin"
+    ("squad_vehicle" side(rus) period(mid)  min_stage(1) max_stage(99) cw(0) cp(10) crew(pilot:0) vehicle(heavy_mg_maxim))
+    {cost -6}
+    {action "airstrike:smoke_cover_callin"}
+}
+{"rocket_arty_callinrus"
+    ("squad_vehicle" side(rus) period(mid)  min_stage(1) max_stage(99) cw(0) cp(10) crew(pilot:0) vehicle(heavy_mg_maxim))
+    {cost 14}
+    {action "airstrike:rocket_arty_callinrus"}
+}
+
+{"conquest_il2"
+	("squad_vehicle" side(rus) period(mid)  min_stage(1) max_stage(99) cw(0) cp(10) crew(pilot:1) vehicle(il2_mod42))
+	{cost 5}
+	{action "airstrike:sc_250"} 
+}
+{"recon_runrus"
+	("squad_vehicle" side(rus) period(mid)  min_stage(1) max_stage(99) cw(0) cp(10) crew(pilot:2) vehicle(po2))
+	{cost 4}
+	{action "airstrike:pistol_ammo"} 
+}
+{"ammodroprus"
+	("squad_vehicle" side(rus) period(mid)  min_stage(1) max_stage(99) cw(0) cp(10) crew(pilot:1) vehicle(yak1_ser69))
+	{cost 6}
+	{action "airstrike:artillery_aim2"} 
+}
+{"controllable_planerus"
+    ("squad_vehicle" side(rus) period(mid)  min_stage(1) max_stage(99) cw(0) cp(10)  crew(pilot:1) vehicle(il2_mod42player))
+    {cost 9}
+    {action "airstrike:artillery_aim"}
+}
+
+{"paratroopers_rus"
+    ("squad_vehicle10" side(rus) period(late) min_stage(7) max_stage(99) cw(3) cp(5) vehicle(il2_mod42_para_planeplayer) crew1(pilot:1) crew2(spetsnaz_5:1) crew3(spetsnaz_1:1) crew4(spetsnaz_1:1) crew5(spetsnaz_4:2) crew6(spetsnaz_2:2) crew7(spetsnaz_1:1) crew8(spetsnaz_3:1) crew9(spetsnaz_3:2) crew10(spetsnaz_3:1))
+    {cost -457} 
+    {action "airstrike:pointer_player_paratrooper"}
+}
+
+

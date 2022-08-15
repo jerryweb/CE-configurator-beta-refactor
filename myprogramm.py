@@ -7,7 +7,6 @@ root = Tk()
 root.title("CE Configurator")
 root.geometry("500x500")
 
-my_text = Text (root)
 
 
 
@@ -96,7 +95,7 @@ def aiArmySize():
     aiSizeWindow = Label(aiSizeWindow,text=f"Current AI army size multiplier is {currentLength5}. Normally it's between 6 and 7").grid(row=1, column=2)
 
 aiarmy = Button(root, text="AI army size", command=aiArmySize)
-aiarmy.grid(row=2,column=1)
+aiarmy.grid(row=13,column=1)
 
 def playerArmySize():
     playerSizeWindow = Toplevel(root)
@@ -1135,13 +1134,474 @@ def regenerateAmmos():
 regenerateAmmo = Button(root, text="Make supply trucks regenerate ammo", command=regenerateAmmos)
 regenerateAmmo.grid(row=12,column=1)
 
+def openPeriod():
+    campaignPeriod = Toplevel(root)
+    campaignPeriod.title("Choose war period for your conquest")
+    campaignPeriod.geometry('400x350+50+50')
+    messagebox.showinfo("Warning", "Experimental feature! When you set the war period the difficulty files will  be reset!!! So if you changed anything before that, you'll have to do it again. If you don't want to change anything just press 'leave'")
+    campaignPeriod.focus_force()
+    def setNormalPeriod():
+           with open("./configurator files/normal/roster/units_fin.set", "r") as lengthFile:
+                finUnits = lengthFile.read()
+
+           with open("./resource/set/multiplayer/units/conquest/units_fin.set", "w") as lengthFile:
+                lengthFile.write(finUnits)
+
+           with open("./configurator files/normal/roster/units_fin2.set", "r") as lengthFile:
+               finnUnits = lengthFile.read()
+
+           with open("./resource/set/multiplayer/units/conquest/units_fin2.set", "w") as lengthFile:
+               lengthFile.write(finnUnits)
+
+           with open("./configurator files/normal/roster/units_ger.set", "r") as lengthFile:
+               gerUnits = lengthFile.read()
+
+           with open("./resource/set/multiplayer/units/conquest/units_ger.set", "w") as lengthFile:
+               lengthFile.write(gerUnits)
+
+           with open("./configurator files/normal/roster/units_ger2.set", "r") as lengthFile:
+                gerrUnits = lengthFile.read()
+
+           with open("./resource/set/multiplayer/units/conquest/units_ger2.set", "w") as lengthFile:
+                lengthFile.write(gerrUnits)
+
+           with open("./configurator files/normal/roster/units_rus.set", "r") as lengthFile:
+                sovUnits = lengthFile.read()
+
+           with open("./resource/set/multiplayer/units/conquest/units_rus.set", "w") as lengthFile:
+                lengthFile.write(sovUnits)
+
+           with open("./configurator files/normal/roster/units_rus2.set", "r") as lengthFile:
+                russUnits = lengthFile.read()
+
+           with open("./resource/set/multiplayer/units/conquest/units_rus2.set", "w") as lengthFile:
+                lengthFile.write(russUnits)
+
+           with open("./configurator files/normal/conquest_configuration/bot.wave_system.lua", "r") as lengthFile:
+                botWave = lengthFile.read()
+
+           with open("./resource/script/multiplayer/bot.wave_system.lua", "w") as lengthFile:
+                lengthFile.write(botWave)
+
+           with open("./configurator files/normal/conquest_configuration/bot.lua", "r") as lengthFile:
+                botF = lengthFile.read()
+
+           with open("./resource/script/multiplayer/bot.lua", "w") as lengthFile:
+                lengthFile.write(botF)
+
+           with open("./configurator files/normal/dynamic_campaign/dcg_easy.inc", "r") as lengthFile:
+                easyD = lengthFile.read()
+
+           with open("./resource/set/dynamic_campaign/dcg_easy.inc", "w") as lengthFile:
+                lengthFile.write(easyD)
+
+           with open("./configurator files/normal/dynamic_campaign/dcg_normal.inc", "r") as lengthFile:
+               normalD = lengthFile.read()
+
+           with open("./resource/set/dynamic_campaign/dcg_normal.inc", "w") as lengthFile:
+               lengthFile.write(normalD)
+
+           with open("./configurator files/normal/dynamic_campaign/dcg_hard.inc", "r") as lengthFile:
+               hardD = lengthFile.read()
+
+           with open("./resource/set/dynamic_campaign/dcg_hard.inc", "w") as lengthFile:
+               lengthFile.write(hardD)
+           with open("./configurator files/normal/dynamic_campaign/dcg_heroic.inc", "r") as lengthFile:
+               heroD = lengthFile.read()
+
+           with open("./resource/set/dynamic_campaign/dcg_heroic.inc", "w") as lengthFile:
+               lengthFile.write(heroD)
+
+           with open("./configurator files/normal/dynamic_campaign/unit_research_fin.set", "r") as lengthFile:
+               finRes = lengthFile.read()
+
+           with open("./resource/set/dynamic_campaign/unit_research_fin.set", "w") as lengthFile:
+               lengthFile.write(finRes)
+
+           with open("./configurator files/normal/dynamic_campaign/unit_research_fin2.set", "r") as lengthFile:
+               finRess = lengthFile.read()
+
+           with open("./resource/set/dynamic_campaign/unit_research_fin2.set", "w") as lengthFile:
+               lengthFile.write(finRess)
+
+           with open("./configurator files/normal/dynamic_campaign/unit_research_ger.set", "r") as lengthFile:
+               gerRes = lengthFile.read()
+
+           with open("./resource/set/dynamic_campaign/unit_research_ger.set", "w") as lengthFile:
+               lengthFile.write(gerRes)
+
+           with open("./configurator files/normal/dynamic_campaign/unit_research_ger2.set", "r") as lengthFile:
+               gerRess = lengthFile.read()
+
+           with open("./resource/set/dynamic_campaign/unit_research_ger2.set", "w") as lengthFile:
+               lengthFile.write(gerRess)
+           with open("./configurator files/normal/dynamic_campaign/unit_research_rus.set", "r") as lengthFile:
+               rusRes = lengthFile.read()
+
+           with open("./resource/set/dynamic_campaign/unit_research_rus.set", "w") as lengthFile:
+               lengthFile.write(rusRes)
+
+           with open("./configurator files/normal/dynamic_campaign/unit_research_rus2.set", "r") as lengthFile:
+               rusRess = lengthFile.read()
+
+           with open("./resource/set/dynamic_campaign/unit_research_rus.set", "w") as lengthFile:
+               lengthFile.write(rusRess)
+
+
+           messagebox.showinfo("Saved")
+           campaignPeriod.destroy()
+
+    def setEarlyPeriod():
+        with open("./configurator files/earlywar/roster/units_fin.set", "r") as lengthFile:
+            finUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_fin.set", "w") as lengthFile:
+            lengthFile.write(finUnits)
+
+        with open("./configurator files/earlywar/roster/units_fin2.set", "r") as lengthFile:
+            finnUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_fin2.set", "w") as lengthFile:
+            lengthFile.write(finnUnits)
+
+        with open("./configurator files/earlywar/roster/units_ger.set", "r") as lengthFile:
+            gerUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_ger.set", "w") as lengthFile:
+            lengthFile.write(gerUnits)
+
+        with open("./configurator files/earlywar/roster/units_ger2.set", "r") as lengthFile:
+            gerrUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_ger2.set", "w") as lengthFile:
+            lengthFile.write(gerrUnits)
+
+        with open("./configurator files/earlywar/roster/units_rus.set", "r") as lengthFile:
+            sovUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_rus.set", "w") as lengthFile:
+            lengthFile.write(sovUnits)
+
+        with open("./configurator files/earlywar/roster/units_rus2.set", "r") as lengthFile:
+            russUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_rus2.set", "w") as lengthFile:
+            lengthFile.write(russUnits)
+
+        with open("./configurator files/earlywar/conquest_configuration/bot.wave_system.lua", "r") as lengthFile:
+            botWave = lengthFile.read()
+
+        with open("./resource/script/multiplayer/bot.wave_system.lua", "w") as lengthFile:
+            lengthFile.write(botWave)
+
+        with open("./configurator files/earlywar/conquest_configuration/bot.lua", "r") as lengthFile:
+            botF = lengthFile.read()
+
+        with open("./resource/script/multiplayer/bot.lua", "w") as lengthFile:
+            lengthFile.write(botF)
+
+        with open("./configurator files/earlywar/dynamic_campaign/dcg_easy.inc", "r") as lengthFile:
+            easyD = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/dcg_easy.inc", "w") as lengthFile:
+            lengthFile.write(easyD)
+
+        with open("./configurator files/earlywar/dynamic_campaign/dcg_normal.inc", "r") as lengthFile:
+            normalD = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/dcg_normal.inc", "w") as lengthFile:
+            lengthFile.write(normalD)
+
+        with open("./configurator files/earlywar/dynamic_campaign/dcg_hard.inc", "r") as lengthFile:
+            hardD = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/dcg_hard.inc", "w") as lengthFile:
+            lengthFile.write(hardD)
+        with open("./configurator files/earlywar/dynamic_campaign/dcg_heroic.inc", "r") as lengthFile:
+            heroD = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/dcg_heroic.inc", "w") as lengthFile:
+            lengthFile.write(heroD)
+
+        with open("./configurator files/earlywar/dynamic_campaign/unit_research_fin.set", "r") as lengthFile:
+            finRes = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_fin.set", "w") as lengthFile:
+            lengthFile.write(finRes)
+
+        with open("./configurator files/earlywar/dynamic_campaign/unit_research_fin2.set", "r") as lengthFile:
+            finRess = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_fin2.set", "w") as lengthFile:
+            lengthFile.write(finRess)
+
+        with open("./configurator files/earlywar/dynamic_campaign/unit_research_ger.set", "r") as lengthFile:
+            gerRes = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_ger.set", "w") as lengthFile:
+            lengthFile.write(gerRes)
+
+        with open("./configurator files/earlywar/dynamic_campaign/unit_research_ger2.set", "r") as lengthFile:
+            gerRess = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_ger2.set", "w") as lengthFile:
+            lengthFile.write(gerRess)
+        with open("./configurator files/earlywar/dynamic_campaign/unit_research_rus.set", "r") as lengthFile:
+            rusRes = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_rus.set", "w") as lengthFile:
+            lengthFile.write(rusRes)
+
+        with open("./configurator files/earlywar/dynamic_campaign/unit_research_rus2.set", "r") as lengthFile:
+            rusRess = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_rus.set", "w") as lengthFile:
+            lengthFile.write(rusRess)
+
+        messagebox.showinfo("Saved")
+        campaignPeriod.destroy()
+    def setMidPeriod():
+        with open("./configurator files/midwar/roster/units_fin.set", "r") as lengthFile:
+            finUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_fin.set", "w") as lengthFile:
+            lengthFile.write(finUnits)
+
+        with open("./configurator files/midwar/roster/units_fin2.set", "r") as lengthFile:
+            finnUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_fin2.set", "w") as lengthFile:
+            lengthFile.write(finnUnits)
+
+        with open("./configurator files/midwar/roster/units_ger.set", "r") as lengthFile:
+            gerUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_ger.set", "w") as lengthFile:
+            lengthFile.write(gerUnits)
+
+        with open("./configurator files/midwar/roster/units_ger2.set", "r") as lengthFile:
+            gerrUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_ger2.set", "w") as lengthFile:
+            lengthFile.write(gerrUnits)
+
+        with open("./configurator files/midwar/roster/units_rus.set", "r") as lengthFile:
+            sovUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_rus.set", "w") as lengthFile:
+            lengthFile.write(sovUnits)
+
+        with open("./configurator files/midwar/roster/units_rus2.set", "r") as lengthFile:
+            russUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_rus2.set", "w") as lengthFile:
+            lengthFile.write(russUnits)
+
+        with open("./configurator files/midwar/conquest_configuration/bot.wave_system.lua", "r") as lengthFile:
+            botWave = lengthFile.read()
+
+        with open("./resource/script/multiplayer/bot.wave_system.lua", "w") as lengthFile:
+            lengthFile.write(botWave)
+
+        with open("./configurator files/midwar/conquest_configuration/bot.lua", "r") as lengthFile:
+            botF = lengthFile.read()
+
+        with open("./resource/script/multiplayer/bot.lua", "w") as lengthFile:
+            lengthFile.write(botF)
+
+        with open("./configurator files/midwar/dynamic_campaign/dcg_easy.inc", "r") as lengthFile:
+            easyD = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/dcg_easy.inc", "w") as lengthFile:
+            lengthFile.write(easyD)
+
+        with open("./configurator files/midwar/dynamic_campaign/dcg_normal.inc", "r") as lengthFile:
+            normalD = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/dcg_normal.inc", "w") as lengthFile:
+            lengthFile.write(normalD)
+
+        with open("./configurator files/midwar/dynamic_campaign/dcg_hard.inc", "r") as lengthFile:
+            hardD = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/dcg_hard.inc", "w") as lengthFile:
+            lengthFile.write(hardD)
+        with open("./configurator files/midwar/dynamic_campaign/dcg_heroic.inc", "r") as lengthFile:
+            heroD = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/dcg_heroic.inc", "w") as lengthFile:
+            lengthFile.write(heroD)
+
+        with open("./configurator files/midwar/dynamic_campaign/unit_research_fin.set", "r") as lengthFile:
+            finRes = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_fin.set", "w") as lengthFile:
+            lengthFile.write(finRes)
+
+        with open("./configurator files/midwar/dynamic_campaign/unit_research_fin2.set", "r") as lengthFile:
+            finRess = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_fin2.set", "w") as lengthFile:
+            lengthFile.write(finRess)
+
+        with open("./configurator files/midwar/dynamic_campaign/unit_research_ger.set", "r") as lengthFile:
+            gerRes = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_ger.set", "w") as lengthFile:
+            lengthFile.write(gerRes)
+
+        with open("./configurator files/midwar/dynamic_campaign/unit_research_ger2.set", "r") as lengthFile:
+            gerRess = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_ger2.set", "w") as lengthFile:
+            lengthFile.write(gerRess)
+        with open("./configurator files/midwar/dynamic_campaign/unit_research_rus.set", "r") as lengthFile:
+            rusRes = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_rus.set", "w") as lengthFile:
+            lengthFile.write(rusRes)
+
+        with open("./configurator files/midwar/dynamic_campaign/unit_research_rus2.set", "r") as lengthFile:
+            rusRess = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_rus.set", "w") as lengthFile:
+            lengthFile.write(rusRess)
+
+        messagebox.showinfo("Saved")
+        campaignPeriod.destroy()
+    def setLatePeriod():
+        with open("./configurator files/latewar/roster/units_fin.set", "r") as lengthFile:
+            finUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_fin.set", "w") as lengthFile:
+            lengthFile.write(finUnits)
+
+        with open("./configurator files/latewar/roster/units_fin2.set", "r") as lengthFile:
+            finnUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_fin2.set", "w") as lengthFile:
+            lengthFile.write(finnUnits)
+
+        with open("./configurator files/latewar/roster/units_ger.set", "r") as lengthFile:
+            gerUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_ger.set", "w") as lengthFile:
+            lengthFile.write(gerUnits)
+
+        with open("./configurator files/latewar/roster/units_ger2.set", "r") as lengthFile:
+            gerrUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_ger2.set", "w") as lengthFile:
+            lengthFile.write(gerrUnits)
+
+        with open("./configurator files/latewar/roster/units_rus.set", "r") as lengthFile:
+            sovUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_rus.set", "w") as lengthFile:
+            lengthFile.write(sovUnits)
+
+        with open("./configurator files/latewar/roster/units_rus2.set", "r") as lengthFile:
+            russUnits = lengthFile.read()
+
+        with open("./resource/set/multiplayer/units/conquest/units_rus2.set", "w") as lengthFile:
+            lengthFile.write(russUnits)
+
+        with open("./configurator files/latewar/conquest_configuration/bot.wave_system.lua", "r") as lengthFile:
+            botWave = lengthFile.read()
+
+        with open("./resource/script/multiplayer/bot.wave_system.lua", "w") as lengthFile:
+            lengthFile.write(botWave)
+
+        with open("./configurator files/latewar/conquest_configuration/bot.lua", "r") as lengthFile:
+            botF = lengthFile.read()
+
+        with open("./resource/script/multiplayer/bot.lua", "w") as lengthFile:
+            lengthFile.write(botF)
+
+        with open("./configurator files/latewar/dynamic_campaign/dcg_easy.inc", "r") as lengthFile:
+            easyD = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/dcg_easy.inc", "w") as lengthFile:
+            lengthFile.write(easyD)
+
+        with open("./configurator files/latewar/dynamic_campaign/dcg_normal.inc", "r") as lengthFile:
+            normalD = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/dcg_normal.inc", "w") as lengthFile:
+            lengthFile.write(normalD)
+
+        with open("./configurator files/latewar/dynamic_campaign/dcg_hard.inc", "r") as lengthFile:
+            hardD = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/dcg_hard.inc", "w") as lengthFile:
+            lengthFile.write(hardD)
+        with open("./configurator files/latewar/dynamic_campaign/dcg_heroic.inc", "r") as lengthFile:
+            heroD = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/dcg_heroic.inc", "w") as lengthFile:
+            lengthFile.write(heroD)
+
+        with open("./configurator files/latewar/dynamic_campaign/unit_research_fin.set", "r") as lengthFile:
+            finRes = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_fin.set", "w") as lengthFile:
+            lengthFile.write(finRes)
+
+        with open("./configurator files/latewar/dynamic_campaign/unit_research_fin2.set", "r") as lengthFile:
+            finRess = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_fin2.set", "w") as lengthFile:
+            lengthFile.write(finRess)
+
+        with open("./configurator files/latewar/dynamic_campaign/unit_research_ger.set", "r") as lengthFile:
+            gerRes = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_ger.set", "w") as lengthFile:
+            lengthFile.write(gerRes)
+
+        with open("./configurator files/latewar/dynamic_campaign/unit_research_ger2.set", "r") as lengthFile:
+            gerRess = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_ger2.set", "w") as lengthFile:
+            lengthFile.write(gerRess)
+        with open("./configurator files/latewar/dynamic_campaign/unit_research_rus.set", "r") as lengthFile:
+            rusRes = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_rus.set", "w") as lengthFile:
+            lengthFile.write(rusRes)
+
+        with open("./configurator files/latewar/dynamic_campaign/unit_research_rus2.set", "r") as lengthFile:
+            rusRess = lengthFile.read()
+
+        with open("./resource/set/dynamic_campaign/unit_research_rus.set", "w") as lengthFile:
+            lengthFile.write(rusRess)
+
+        messagebox.showinfo("Saved")
+        campaignPeriod.destroy()
+
+    def leav():
+        campaignPeriod.destroy()
+
+
+    normalPeriod = Button(campaignPeriod,text="All war 1939-1945",command=setNormalPeriod).grid(row=2,column=3)
+    earlyPeriod= Button(campaignPeriod,text="Early war 1939-1941",command=setEarlyPeriod).grid(row=3,column=3)
+    midPeriod= Button(campaignPeriod,text="Mid war 1941-1943",command=setMidPeriod).grid(row=4,column=3)
+    latePeriod= Button(campaignPeriod,text="Late war 1943-1945",command=setLatePeriod).grid(row=5,column=3)
+    leave = Button(campaignPeriod,text="leave",command=leav).grid(row=6,column=3)
+    periodLabel=Label(text="Choose war period for your conquest").grid(row=1,column=3)
+
+
+periodButton = Button(root, text="War period", command=openPeriod).grid(row=2,column=1)
+
+
+
+
 
 
 #epoint = Entry(root, width=20)
 
 #epoint.pack()
-def typedifficulty():
-    print(difficulty.get())
+
 
 #global difficulty
 #difficulty = StringVar(value="normal")

@@ -1,0 +1,32 @@
+
+;---Trucks---
+	{tech "reinforcement_stage_6"	requires "defense_level_3 reinforcement_stage_5"			costs 0}
+	{tech "reinforcement_stage_7"	requires "defense_level_3 reinforcement_stage_5"			costs 0}
+	{tech "rocket_arty_callinrus"	requires "heavy_artillery_barrage"			costs 3}
+	{tech "heavy_artillery_barrage"	requires "light_mortar_barrage"			costs 2}
+	{tech "light_mortar_barrage"	requires "squad_officer_gaz_con"			costs 1}
+	{tech "ammodroprus"	requires "conquest_il2 gaz_aaa_supply"			costs 0}
+	{tech "recon_runrus"	requires "conquest_il2"			costs 0}
+	{tech "controllable_planerus"	requires "conquest_il2"			costs 0}
+	{tech "paratroopers_rus"	requires "conquest_il2 squad_paras_con(rus)"			costs 0}
+	{"single_engineer_ai_2(rus)"						requires	""				costs 333}
+	{"single_engineer_ai_1(rus)"						requires	""				costs 333}
+	
+	{"ap_2_universal"				requires	"gaz_aaa_supply"		costs 3}
+		
+{GridWidth 10} ;total with 0-#
+{Positions
+	{"reinforcement_stage_6"	7 0}
+	{"reinforcement_stage_7"	8 0}
+	{"light_mortar_barrage"	5 3}
+	{"heavy_artillery_barrage"	6 3}
+	{"rocket_arty_callinrus"	7 3}
+	{"ammodroprus"	1 4}
+	{"recon_runrus"	2 4}
+	{"controllable_planerus"	3 4}
+	{"paratroopers_rus"	4 4}
+	{"single_engineer_ai_1(rus)"		22 24}
+	{"single_engineer_ai_2(rus)"		22 24}
+	
+	{"ap_2_universal"					7 8}
+}

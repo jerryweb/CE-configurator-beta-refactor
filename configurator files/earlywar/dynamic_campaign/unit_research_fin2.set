@@ -1,0 +1,30 @@
+	{tech "reinforcement_stage_6"	requires "defense_level_3 reinforcement_stage_5"			costs 0}
+	{tech "reinforcement_stage_7"	requires "defense_level_3 reinforcement_stage_5"			costs 0}
+
+	{tech "heavy_artillery_barragefin"	requires "light_mortar_barragefin"			costs 2}
+	{tech "light_mortar_barragefin"	requires "squad_officer_con(fin)"			costs 1}
+	{tech "recon_runfin"	requires "conquest_blenheim"			costs 0}
+	{tech "ammodropfin"	requires "conquest_blenheim ford_v3000_ammo"			costs 0}
+	{tech "controllableplanefin"	requires "conquest_blenheim"			costs 0}
+	{"ba20_command_fin"						requires	"squad_officer_con(fin)"				costs 0 }
+	{"pz38h_w40"						requires	"150mm_rkh41"				costs 3 }
+	{"squad_heavy_engineer_mid_con_ai(fin)"						requires	""				costs 333}
+	{"single_engineer_ai(fin)"						requires	""				costs 333}
+		
+
+{GridWidth 10} ;total with 0-#
+{Positions
+	{"ba20_command_fin"		6 2}
+	{"pz38h_w40"		8 24}
+	{"single_engineer_ai(fin)"		22 24}
+	{"squad_heavy_engineer_mid_con_ai(fin)"		22 24}
+
+	{"reinforcement_stage_6"	7 0}
+	{"reinforcement_stage_7"	8 0}
+	{"light_mortar_barragefin"	6 3}
+	{"heavy_artillery_barragefin"	7 3}
+
+	{"recon_runfin"	2 4}
+	{"ammodropfin"	3 4}
+	{"controllableplanefin"	4 4}
+}

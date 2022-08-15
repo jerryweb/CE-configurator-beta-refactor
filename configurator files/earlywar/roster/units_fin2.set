@@ -1,0 +1,235 @@
+;SDL
+
+;////////////////// INSTRUCTIONS //////////////////
+;Buttons go as follows, displayed in-game in this order:
+
+; inf1       - infantry squads
+; inf2       - infantry single units
+; empl       - Emplacements, AA, AT, Mortars, Howitzers
+; vehicles   - vehicles, armoured cars, supplies
+; tanks      - main battle tanks, TDs, SPGs
+; doctrine   - specific doctrine setups
+
+; TEMP: Note all levels have been brought down to 1 to remove unit locks.
+; Squads currently have an MP cost of 0 - their cost is currently calculated as the sum of their soldiers cost, see inf_fin.set
+; Check ../settings.set for syntax instructions!!
+; unit limits per game are not defined here but in gamemode presets
+
+;user defined set tags that should be featured on units:
+;all artillery heavyart cannon mediumcan heavycan light medium heavy infantry supply
+;these tags allow player to disable certain sets for custom setups like "no heavy artillery" 
+;//////////////////////////////////////////////////
+
+
+;_________________________________________________
+;|             inf1                               |
+;|________________________________________________|
+
+("squad_with1types_conquest" side(fin) period(mid) min_stage(4) max_stage(99) name(squad_heavy_engineer_mid_con_ai) c1(engineer_heavy:1)) {not_for_player_sale 1}
+
+("squad_with1types_conquest" side(fin) period(mid) min_stage(1) max_stage(99) name(single_engineer_ai)		c1(engineer_builder:1)) {not_for_player_sale 1}
+
+;_________________________________________________
+;|             inf2                               |
+;|________________________________________________|
+
+
+{"ba20_command_fin"
+	("vehicle2" side(fin) period(mid) min_stage(2) max_stage(99) cw(2) cp(25) crew1(tankman:2) crew2(officer:1))
+	{cost 250}
+}
+{"pz38h_w40"
+	("vehicle2" side(fin) period(mid) min_stage(8) max_stage(99) cw(0) cp(30) crew1(tankman:1) crew2(tank_commander:1))
+	{cost 1400}
+}
+
+
+;_________________________________________________
+;|                  Emplacements                  |
+;|________________________________________________|
+
+
+
+;AUTOMATIC WEAPONRY
+{"heavy_mg_maxim_m1910_30"
+	("emplacement" side(fin) period(mid) min_stage(1) max_stage(99) cw(0) cp(0)  cd(2) crew(mg_crew:2) condition(barricade) action(heavy_mg_maxim))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_maxim_m1910_30"
+	("emplacement" side(fin) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(2) crew1(mg_crew:1) crew2(mg_crew_asst:1) condition(barricade) action(maxim_m1910_30))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_ds39_stand_fin"
+	("emplacement" side(fin) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(2) crew1(mg_crew:1) crew2(mg_crew_asst:1) condition(barricade) action(ds39_stand_fin))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_panzernest_krab"
+	("emplacement" side(fin) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(2) crew1(mg_crew:1) crew2(mg_crew_asst:1) condition(barricade) action(panzernest_krab))
+	{cost 1}{not_for_player_sale 1}
++}
+{"heavy_mg_20mm_itk35"
+	("emplacement"  side(fin) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(2) crew(artilleryman:2) condition(barricade) action(20mm_itk35))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_20mm_itk40"
+	("emplacement"  side(fin) period(mid) min_stage(2) max_stage(99) cw(0) cp(0)  cd(2) crew(artilleryman:2) condition(barricade) action(20mm_itk40))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_40mm_itk38b"
+	("emplacement"  side(fin) period(mid) min_stage(2) max_stage(99) cw(0) cp(0) cd(2) crew(artilleryman:3) condition(barricade) action(40mm_itk38b))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_75mm_itk37"
+	("emplacement"  side(fin) period(mid) min_stage(4) max_stage(99) cw(0) cp(0) cd(2) crew(artilleryman:5) condition(barricade) action(75mm_itk37))
+	{cost 1}{not_for_player_sale 1}
+}
+
+; AT WEAPONRY
+{"heavy_mg_20mm_l39"
+	("emplacement"  side(fin) period(mid) min_stage(3) max_stage(99) cw(0) cp(0) crew(artilleryman:2) condition(barricade) action(20mm_l39))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_37mm_pstk36"
+	("emplacement"  side(fin) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) crew(artilleryman:4) condition(barricade) action(37mm_pstk36))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_45mm_pstk32"
+	("emplacement"  side(fin) period(mid) min_stage(5) max_stage(99) cw(0) cp(0) crew(artilleryman:4) condition(barricade) action(45mm_pstk32))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_47mm_pstk39"
+	("emplacement"  side(fin) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) crew(artilleryman:4) condition(barricade) action(47mm_pstk39))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_50mm_pstk38"
+	("emplacement"  side(fin) period(mid) min_stage(4) max_stage(99) cw(0) cp(0) crew(artilleryman:4) condition(barricade) action(50mm_pstk38))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_76mm_k02"
+	("emplacement"  side(fin) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) crew(artilleryman:4) condition(barricade) action(76mm_k02))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_76mm_k02_30_40"
+	("emplacement"  side(fin) period(mid) min_stage(3) max_stage(99) cw(0) cp(0) crew(artilleryman:4) condition(barricade) action(76mm_k02_30_40))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_75mm_pstk9738"
+	("emplacement"  side(fin) period(mid) min_stage(4) max_stage(99) cw(0) cp(0) crew(artilleryman:4) condition(barricade) action(75mm_pstk9738))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_76mm_k36"
+	("emplacement"  side(fin) period(mid) min_stage(4) max_stage(99) cw(0) cp(0) crew(artilleryman:4) condition(barricade) action(76mm_k36))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_75mm_k40"
+	("emplacement"  side(fin) period(mid) min_stage(5) max_stage(99) cw(0) cp(0) crew(artilleryman:4) condition(barricade) action(75mm_k40))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_50mm_krh38"
+	("emplacement"  side(fin) period(mid) min_stage(4) max_stage(99) cw(0) cp(0) crew(artilleryman:2) condition(barricade) action(50mm_krh38))
+	{cost 180}{not_for_player_sale 1}
+}
+{"heavy_mg_81mm_krh36"
+	("emplacement"  side(fin) period(mid) min_stage(2) max_stage(99) cw(0) cp(0) crew(artilleryman:2) condition(barricade) action(81mm_krh36))
+	{cost 225}{not_for_player_sale 1}
+}
+{"heavy_mg_120mm_krh40"
+	("emplacement"  side(fin) period(mid) min_stage(2) max_stage(99) cw(0) cp(0) crew(artilleryman:2) condition(barricade) action(120mm_krh40))
+	{cost 225}{not_for_player_sale 1}
+}
+{"heavy_mg_105mm_k13"
+	("emplacement"  side(fin) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) crew(artilleryman:4) condition(barricade) action(105mm_k13))
+	{cost 730}{not_for_player_sale 1}
+}
+{"107mm_k10ai"
+	("vehicle"  side(fin) period(mid) min_stage(4) max_stage(99) cw(0) cp(5) crew(artilleryman:4))
+	{cost 740}{not_for_player_sale 1}
+}
+
+{"120mm_k78_31ai"
+	("vehicle"  side(fin) period(mid) min_stage(9) max_stage(99) cw(0) cp(5) crew(artilleryman:4))
+	{cost 800}{not_for_player_sale 1}
+}
+
+{"122mm_m1910_finai"
+	("vehicle"  side(fin) period(mid) min_stage(9) max_stage(99) cw(0) cp(5) crew(artilleryman:4))
+	{cost 750}{not_for_player_sale 1}
+}
+
+{"150mm_h40ai"
+	("vehicle"  side(fin) period(mid) min_stage(9) max_stage(99) cw(0) cp(5) crew(artilleryman:5))
+	{cost 1000}{not_for_player_sale 1}
+}
+
+{"155mm_h17ai"
+	("vehicle"  side(fin) period(mid) min_stage(9) max_stage(99) cw(0) cp(5) crew(artilleryman:4))
+	{cost 980}{not_for_player_sale 1}
+}
+
+{"170mm_minewerferai"
+	("vehicle"  side(fin) period(mid) min_stage(9) max_stage(99) cw(0) cp(5) crew(artilleryman:2))
+	{cost 700}{not_for_player_sale 1}
+}
+
+{"203mm_h17ai"
+	("vehicle"  side(fin) period(mid) min_stage(9) max_stage(99) cw(0) cp(5) crew(artilleryman:5))
+	{cost 1400}{not_for_player_sale 1}
+}
+
+{"150mm_rkh41ai"
+	("vehicle"  side(fin) period(mid) min_stage(9) max_stage(99) cw(0) cp(5) crew(artilleryman:4))
+	{cost 800}{not_for_player_sale 1}
+}
+
+
+;HOWITZERS
+
+{"heavy_mg_81mm_krh36"
+	("emplacement"  side(fin) period(mid) min_stage(2) max_stage(99) cw(0) cp(0) crew(artilleryman:2) condition(barricade) action(81mm_krh36))
+	{cost 1}{not_for_player_sale 1}
+}
+{"heavy_mg_84mm_k18"
+	("emplacement"  side(fin) period(mid) min_stage(1) max_stage(5) cw(0) cp(0) crew(artilleryman:4) condition(barricade) action(84mm_k18))
+	{cost 430}{not_for_player_sale 1}
+}
+
+
+;_______________________________________________
+;|					Aircraft					|
+;|______________________________________________|
+
+
+{"light_mortar_barragefin"
+    ("squad_vehicle" side(fin) period(mid)  min_stage(1) max_stage(99) cw(0) cp(10) crew(pilot:0) vehicle(heavy_mg_mg34))
+    {cost 3} 
+    {action "airstrike:light_mortar_barrage"}
+}
+{"heavy_artillery_barragefin"
+    ("squad_vehicle" side(fin) period(mid)  min_stage(1) max_stage(99) cw(0) cp(10) crew(pilot:0) vehicle(heavy_mg_maxim))
+    {cost 0}
+    {action "airstrike:heavy_arty_barrage"}
+}
+{"smoke_cover_callinfin"
+    ("squad_vehicle" side(fin) period(mid)  min_stage(1) max_stage(99) cw(0) cp(10) crew(pilot:0) vehicle(heavy_mg_maxim))
+    {cost -6} 
+    {action "airstrike:smoke_cover_callin"}
+}
+
+
+{"recon_runfin"
+	("squad_vehicle" side(fin) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) crew(tankman:2) vehicle(fi156))
+	{cost -36}
+	{action "airstrike:pistol_ammo"}
+}
+{"ammodropfin"
+	("squad_vehicle" side(fin) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) crew(tankman:2) vehicle(blenheim_mk1))
+	{cost -34}
+	{action "airstrike:artillery_aim4"}
+}
+
+{"controllableplanefin"
+    ("squad_vehicle" side(fin) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) crew(tankman:2) vehicle(blenheim_mk1playerplane))
+    {cost -30} 
+    {action "airstrike:artillery_aim"}
+}
+

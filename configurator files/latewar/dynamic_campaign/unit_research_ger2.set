@@ -1,0 +1,30 @@
+	{tech "reinforcement_stage_6"	requires "defense_level_3 reinforcement_stage_5"			costs 0}
+	{tech "reinforcement_stage_7"	requires "defense_level_3 reinforcement_stage_5"			costs 0}
+	{tech "rocket_arty_callinger"	requires "heavy_artillery_barrageger"			costs 3}
+	{tech "heavy_artillery_barrageger"	requires "light_mortar_barrageger"			costs 2}
+	{tech "light_mortar_barrageger"	requires "squad_officer_250_3_con"			costs 1}
+	{tech "recon_run"	requires "conquest_bf110"			costs 0}
+	{tech "ammodrop"	requires "conquest_bf110 blitz3_6_art_ammo"			costs 0}
+	{tech "controllableplane"	requires "conquest_bf110"			costs 0}
+	{tech "paratroopers_ger"	requires "conquest_bf110 squad_fallschirmjaeger_con(ger)"			costs 0}	
+	{"single_engineer_ai_1(ger)"						requires	""				costs 333}
+	{"single_engineer_ai_2(ger)"						requires	""				costs 333}
+
+	{"ammo_trailer_universal"						requires	"blitz3_6_art_ammo"				costs 3}
+		
+
+{GridWidth 10} ;total with 0-#
+{Positions
+	{"reinforcement_stage_6"	7 0}
+	{"reinforcement_stage_7"	8 0}
+	{"light_mortar_barrageger"	6 3}
+	{"heavy_artillery_barrageger"	7 3}
+	{"rocket_arty_callinger"	8 3}
+	{"recon_run"	2 4}
+	{"ammodrop"	3 4}
+	{"controllableplane"	4 4}
+	{"paratroopers_ger"	5 4}
+	{"single_engineer_ai_1(ger)"		22 24}
+	{"single_engineer_ai_2(ger)"		22 24}
+	{"ammo_trailer_universal"	7 8}
+}
