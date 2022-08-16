@@ -214,7 +214,11 @@
     {cost -6} 
     {action "airstrike:smoke_cover_callin"}
 }
-
+{"rocket_arty_callinfin"
+    ("squad_vehicle" side(fin) period(mid)  min_stage(1) max_stage(99) cw(0) cp(10) crew(pilot:0) vehicle(heavy_mg_maxim))
+    {cost 14} 
+    {action "airstrike:rocket_arty_callinger"}
+}
 
 {"recon_runfin"
 	("squad_vehicle" side(fin) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) crew(tankman:2) vehicle(fi156))

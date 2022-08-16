@@ -36,11 +36,11 @@ function selectArmyDivision(totalFlags, army)
 	local period = "early"
 
 	if totalFlags == 1 or forceLoadEarlyDivisions then
-		fileNumber = math.random(1, maxNumOfEarlyDivisions[army])
+		fileNumber = math.random(1, maxNumOfLateDivisions[army])
 		period = "early"
 	
 	elseif totalFlags == 2 then
-		fileNumber = math.random(1, maxNumOfEarlyDivisions[army])
+		fileNumber = math.random(1, maxNumOfLateDivisions[army])
 		period = "mid"
 	
 	elseif totalFlags == 3 or totalFlags == 4 then
@@ -54,7 +54,7 @@ function selectArmyDivision(totalFlags, army)
 		return divisionPurchaseModel
 	
 	else
-		fileNumber = math.random(1, maxNumOfEarlyDivisions[army])
+		fileNumber = math.random(1, maxNumOfLateDivisions[army])
 		period = "late"
 	end
 	

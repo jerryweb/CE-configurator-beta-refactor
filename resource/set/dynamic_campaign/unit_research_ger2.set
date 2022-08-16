@@ -1,6 +1,6 @@
 	{tech "reinforcement_stage_6"	requires "defense_level_3 reinforcement_stage_5"			costs 0}
 	{tech "reinforcement_stage_7"	requires "defense_level_3 reinforcement_stage_5"			costs 0}
-	
+	{tech "rocket_arty_callinger"	requires "heavy_artillery_barrageger"			costs 3}
 	{tech "heavy_artillery_barrageger"	requires "light_mortar_barrageger"			costs 2}
 	{tech "light_mortar_barrageger"	requires "squad_officer_250_3_con"			costs 1}
 	{tech "recon_run"	requires "conquest_bf110"			costs 0}
@@ -19,7 +19,7 @@
 	{"reinforcement_stage_7"	8 0}
 	{"light_mortar_barrageger"	6 3}
 	{"heavy_artillery_barrageger"	7 3}
-
+	{"rocket_arty_callinger"	8 3}
 	{"recon_run"	2 4}
 	{"ammodrop"	3 4}
 	{"controllableplane"	4 4}

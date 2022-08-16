@@ -94,7 +94,8 @@
 ;|________________________________________________|
 
 ("squad_with2types_conquest" side(ger) period(mid) min_stage(1) max_stage(99) name(single_at)			c1(antitank_1:1) c2(antitank_2:1))
-
+("squad_with2types_conquest" side(ger) period(late) min_stage(9) max_stage(99) name(single_at_pzs_late_con)	c1(antitank_2:1) c2(antitank_1:1))
+("squad_with3types_conquest" side(ger) period(late) min_stage(10) max_stage(99) name(squad_at_late_con)	c1(nco:1) c2(antitank_1:3) c3(antitank_2:3))
 
 
 ("squad_with1types_conquest" side(ger) period(mid) min_stage(1) max_stage(99) name(single_medic)		c1(medic:5))
@@ -126,7 +127,10 @@
 	("vehicle2" side(ger) period(mid) min_stage(1) max_stage(99) cw(1) cp(1) crew1(mg_crew:1) crew2(mg_crew_asst:1))
 	{cost 130}
 }
-
+{"mg42_lafette"
+	("vehicle2" side(ger) period(mid) min_stage(8) max_stage(99) cw(1) cp(1) crew1(mg_crew:1) crew2(mg_crew_asst:1))
+	{cost 150}
+}
 {"20mm_flak30"
 	("vehicle" side(ger) period(mid) min_stage(1) max_stage(99) cw(0) cp(4) crew(artilleryman:2))
 	{cost 190}
@@ -136,7 +140,7 @@
 	{cost 270}
 }
 {"50mm_flak41"
-	("vehicle"  side(ger) period(mid) min_stage(6) max_stage(99) cw(0) cp(10) crew(artilleryman:5))
+	("vehicle"  side(ger) period(mid) min_stage(7) max_stage(99) cw(0) cp(10) crew(artilleryman:5))
 	{cost 400}
 }
 {"88mm_flak18"
@@ -184,17 +188,20 @@
 	("vehicle"  side(ger) period(mid) min_stage(6) max_stage(15) cw(0) cp(12) crew(artilleryman:2))
 	{cost 400}
 }
-
+{"120mm_sgrw42"
+	("vehicle" side(ger) period(mid) min_stage(9) max_stage(99) cw(0) cp(15) crew(artilleryman:2))
+	{cost 450}
+}
 {"105mm_lefh18"
 	("vehicle" side(ger) period(mid) min_stage(4) max_stage(99) cw(0) cp(30) crew(artilleryman:4))
 	{cost 750}
 }
 {"150mm_nebelwerfer41"
-	("vehicle" side(ger) period(mid) min_stage(6) max_stage(99) cw(0) cp(25) crew(artilleryman:4))
+	("vehicle" side(ger) period(mid) min_stage(7) max_stage(99) cw(0) cp(25) crew(artilleryman:4))
 	{cost 780}
 }
 {"75mm_lg40"
-	("vehicle"  side(ger) period(mid) min_stage(6) max_stage(12) cw(0) cp(10) crew(fallsch_rifle:2))
+	("vehicle"  side(ger) period(mid) min_stage(8) max_stage(12) cw(0) cp(10) crew(fallsch_rifle:2))
 	{cost 300}
 }
 {"150mm_sig33"
@@ -210,14 +217,21 @@
 	{cost 870}
 }
 {"200mm_ldgw40"
-	("vehicle"  side(ger) period(mid) min_stage(6) max_stage(99) cw(0) cp(22) crew(artilleryman:2))
+	("vehicle"  side(ger) period(mid) min_stage(7) max_stage(99) cw(0) cp(22) crew(artilleryman:2))
 	{cost 800}
 }
 {"210mm_morser18"
-	("vehicle" side(ger) period(mid) min_stage(6) max_stage(99) cw(0) cp(30) crew(artilleryman:6))
+	("vehicle" side(ger) period(mid) min_stage(7) max_stage(99) cw(0) cp(30) crew(artilleryman:6))
 	{cost 1500}
 }
-
+{"210mm_nebelwerfer42"
+	("vehicle"  side(ger) period(mid) min_stage(10) max_stage(99) cw(0) cp(25) crew(artilleryman:4))
+	{cost 900}
+}
+{"300mm_nebelwerfer42"
+	("vehicle" side(ger) period(mid) min_stage(10) max_stage(99) cw(0) cp(30) crew(artilleryman:4))
+	{cost 1000}
+}
 
 ;_________________________________________________
 ;|               Wheeled vehicles                 |
@@ -260,11 +274,11 @@
 	{cost 150}
 }
 {"sdkfz250a_3"
-	("vehicle"  side(ger) period(mid) min_stage(6) max_stage(99) cw(0) cp(-5) crew(recon_rifle:3))
+	("vehicle"  side(ger) period(mid) min_stage(7) max_stage(99) cw(0) cp(-5) crew(recon_rifle:3))
 	{cost 200} {not_for_player_sale 1}
 }
 {"sdkfz250a_11"
-	("vehicle"  side(ger) period(mid) min_stage(6) max_stage(6) cw(0) cp(15) crew(artilleryman:4))
+	("vehicle"  side(ger) period(mid) min_stage(7) max_stage(6) cw(0) cp(15) crew(artilleryman:4))
 	{cost 300}
 }
 {"sdkfz251c"
@@ -303,12 +317,16 @@
 	("vehicle2" side(ger) period(mid) min_stage(4) max_stage(8) cw(0) cp(13) crew1(tankman:3) crew2(tank_commander:1))
 	{cost 400}
 }
+{"sdkfz234_2"
+	("vehicle2" side(ger) period(mid) min_stage(12) max_stage(99) cw(0) cp(14) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 330}
+}
 {"sdkfz10_pak38"
 	("vehicle2" side(ger) period(mid) min_stage(3) max_stage(7) cw(0) cp(14) crew1(tankman:3) crew2(tank_commander:1))
 	{cost 740}
 }
 {"sdkfz8_flak18"
-	("vehicle2"	side(ger) period(mid) min_stage(6) max_stage(99) cw(0) cp(18) crew1(tankman:4) crew2(tank_commander:1))
+	("vehicle2"	side(ger) period(mid) min_stage(7) max_stage(99) cw(0) cp(18) crew1(tankman:4) crew2(tank_commander:1))
 	{cost 900}
 }
 {"blitz3_6_art_ammo"
@@ -344,6 +362,10 @@
 {"panzer2f"
 	("vehicle2" side(ger) period(mid) min_stage(4) max_stage(6) cw(0) cp(19) crew1(tankman:2) crew2(tank_commander:1))
 	{cost 250}
+}
+{"panzer2l"
+	("vehicle2" side(ger) period(mid) min_stage(8) max_stage(99) cw(0) cp(19) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 300}
 }
 {"pz35t"
 	("vehicle2" side(ger) period(mid) min_stage(1) max_stage(4) cw(0) cp(19) crew1(tankman:3) crew2(tank_commander:1))
@@ -388,10 +410,25 @@
 	{cost 380}
 }
 {"panzer3j1"
-	("vehicle2" side(ger) period(mid) min_stage(6) max_stage(12) cw(0) cp(25) crew1(tankman:4) crew2(tank_commander:1))
+	("vehicle2" side(ger) period(mid) min_stage(7) max_stage(12) cw(0) cp(25) crew1(tankman:4) crew2(tank_commander:1))
 	{cost 430}
 }
-
+{"panzer3l"
+	("vehicle2" side(ger) period(mid) min_stage(9) max_stage(12) cw(0) cp(25) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 440}
+}
+{"panzer3m"
+	("vehicle2" side(ger) period(mid) min_stage(6) max_stage(99) cw(0) cp(25) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 460}
+}
+{"panzer3n"
+	("vehicle2" side(ger) period(mid) min_stage(8) max_stage(99) cw(0) cp(29) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 500}
+}
+{"panzer3_flamm"
+	("vehicle2" side(ger) period(mid) min_stage(8) max_stage(99) cw(0) cp(29) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 520}
+}
 {"panzer4d"
 	("vehicle2" side(ger) period(mid) min_stage(4) max_stage(7) cw(0) cp(29) crew1(tankman:4) crew2(tank_commander:1))
 	{cost 400}
@@ -399,6 +436,34 @@
 {"panzer4f1"
 	("vehicle2" side(ger) period(mid) min_stage(6) max_stage(9) cw(0) cp(29) crew1(tankman:4) crew2(tank_commander:1))
 	{cost 420}
+}
+{"panzer4f2"
+	("vehicle2" side(ger) period(mid) min_stage(9) max_stage(12) cw(0) cp(29) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 580}
+}
+{"panzer4g"
+	("vehicle2" side(ger) period(mid) min_stage(9) max_stage(99) cw(0) cp(29) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 600}
+}
+{"panzer4h"
+	("vehicle2" side(ger) period(mid) min_stage(10) max_stage(99) cw(0) cp(29) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 600}
+}
+{"panzer4j"
+	("vehicle2" side(ger) period(mid) min_stage(10) max_stage(99) cw(0) cp(29) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 580}
+}
+{"panzer5d"
+	("vehicle2" side(ger) period(mid) min_stage(12) max_stage(99) cw(0) cp(34) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1100}
+}
+{"panzer5a"
+	("vehicle2" side(ger) period(mid) min_stage(13) max_stage(99) cw(0) cp(34) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1200}
+}
+{"panzer5g"
+	("vehicle2" side(ger) period(mid) min_stage(13) max_stage(99) cw(0) cp(34) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1250}
 }
 
 ;HEAVY
@@ -410,7 +475,22 @@
 	("vehicle2" side(ger) period(mid) min_stage(6) max_stage(99) cw(0) cp(35) crew1(tankman:4) crew2(tank_commander:1))
 	{cost 950}
 }
-
+{"tiger1h"
+	("vehicle2" side(ger) period(mid) min_stage(8) max_stage(99) cw(0) cp(49) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1150}
+}
+{"tiger1e"
+	("vehicle2" side(ger) period(mid) min_stage(11) max_stage(99) cw(0) cp(49) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1180}
+}
+{"tiger1hunt"
+	("vehicle2" side(ger) period(mid) min_stage(11) max_stage(99) cw(0) cp(49) crew1(tankman_ace:4) crew2(tank_commander_ace:1))
+	{cost 1300}
+}
+{"tiger2h"
+	("vehicle2" side(ger) period(mid) min_stage(11) max_stage(99) cw(0) cp(49) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1650}
+}
 
 ;SPG
 {"panzerjager1"
@@ -421,8 +501,38 @@
 	("vehicle2" side(ger) period(mid) min_stage(5) max_stage(99) cw(0) cp(19) crew1(tankman_stug:3) crew2(tank_commander_stug:1))
 	{cost 620}
 }
-
-
+{"marder2"
+	("vehicle2" side(ger) period(mid) min_stage(8) max_stage(99) cw(0) cp(19) crew1(tankman_stug:3) crew2(tank_commander_stug:1))
+	{cost 700}
+}
+{"marder3m"
+	("vehicle2" side(ger) period(mid) min_stage(8) max_stage(99) cw(0) cp(19) crew1(tankman_stug:3) crew2(tank_commander_stug:1))
+	{cost 800}
+}
+{"hetzer"
+	("vehicle2" side(ger) period(mid) min_stage(14) max_stage(99) cw(0) cp(19) crew1(tankman_stug:3) crew2(tank_commander_stug:1))
+	{cost 820}
+}
+{"grille_m"
+	("vehicle2" side(ger) period(mid) min_stage(11) max_stage(99) cw(0) cp(19) crew1(tankman:3) crew2(tank_commander:1))
+	{cost 520}
+}
+{"stug3f"
+	("vehicle2" side(ger) period(mid) min_stage(8) max_stage(11) cw(0) cp(19) crew1(tankman_stug:3) crew2(tank_commander_stug:1))
+	{cost 850}
+}
+{"stug3g"
+	("vehicle2" side(ger) period(mid) min_stage(11) max_stage(99) cw(0) cp(24) crew1(tankman_stug:3) crew2(tank_commander_stug:1))
+	{cost 990}
+}
+{"stug3g_late"
+	("vehicle2" side(ger) period(mid) min_stage(13) max_stage(99) cw(0) cp(24) crew1(tankman_stug:3) crew2(tank_commander_stug:1))
+	{cost 910}
+}
+{"stuh42"
+	("vehicle2" side(ger) period(mid) min_stage(9) max_stage(99) cw(0) cp(24) crew1(tankman_stug:3) crew2(tank_commander_stug:1))
+	{cost 750} 
+}
 {"bison"
 	("vehicle2" side(ger) period(mid) min_stage(5) max_stage(9) cw(0) cp(19) crew1(tankman:3) crew2(tank_commander:1))
 	{cost 900}
@@ -431,7 +541,22 @@
 	("vehicle2" side(ger) period(mid) min_stage(6) max_stage(99) cw(0) cp(29) crew1(tankman:4) crew2(tank_commander:1))
 	{cost 1000}
 }
-
+{"sturmpanzer4"
+	("vehicle2" side(ger) period(mid) min_stage(14) max_stage(99) cw(0) cp(32) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1150}
+}
+{"ferdinand"
+	("vehicle2" side(ger) period(mid) min_stage(14) max_stage(99) cw(0) cp(32) crew1(tankman:5) crew2(tank_commander:1))
+	{cost 1150}
+}
+{"jagdpanther"
+	("vehicle2" side(ger) period(mid) min_stage(16) max_stage(99) cw(0) cp(34) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1500}
+}
+{"sturmtiger"
+	("vehicle2" side(ger) period(mid) min_stage(16) max_stage(99) cw(0) cp(40) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1650}
+}
 
 ;_______________________________________________
 ;|					Aircraft					|

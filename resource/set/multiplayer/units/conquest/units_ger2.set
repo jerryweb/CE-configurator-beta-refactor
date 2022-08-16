@@ -52,7 +52,10 @@
 	("emplacement" side(ger) period(mid) min_stage(3) max_stage(99) cw(0) cp(0) cd(2) crew(mgun_2:0) condition(barricade) action(heavy_mg_mg34))
 	{cost 1}{not_for_player_sale 1}
 }
-
+{"heavy_mg_mg42"
+	("emplacement" side(ger) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(5) crew(mgun_2:0) condition(barricade) action(mg42_lafette))
+	{cost 2}{not_for_player_sale 1}
+}
 
 {"heavy_mg_20mm_flak30"
 	("emplacement" side(ger) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) cd(5) crew(artilleryman:2) condition(barricade) action(20mm_flak30))
@@ -157,10 +160,29 @@
 	("vehicle" side(ger) period(mid) min_stage(9) max_stage(99) cw(0) cp(5) crew(artilleryman:6))
 	{cost 1500}{not_for_player_sale 1}
 }
+{"210mm_nebelwerfer42ai"
+	("vehicle"  side(ger) period(mid) min_stage(10) max_stage(99) cw(0) cp(5) crew(artilleryman:4))
+	{cost 900}{not_for_player_sale 1}
+}
+{"300mm_nebelwerfer42ai"
+	("vehicle" side(ger) period(mid) min_stage(12) max_stage(99) cw(0) cp(5) crew(artilleryman:4))
+	{cost 1000}{not_for_player_sale 1}
+}
+
+
+{"tiger2p"
+	("vehicle2" side(ger) period(mid) min_stage(10) max_stage(99) cw(0) cp(49) crew1(tankman:4) crew2(tank_commander:1))
+	{cost 1500}{not_for_player_sale 1}
+}
+
+;"plane"
+    ("squad_vehicle2" side(ger) period(mid)  min_stage(1) max_stage(99) cw(0) cp(10)  crew1(pilot:1) crew2(pilot:1) vehicle(bf110_playerplane))
+    {cost 11} 
 
 
 
-
+;"paraplane"
+	("squad_vehicle10"	 side(ger) period(late) min_stage(6) max_stage(99) cw(3) cp(5) vehicle(bf110_para_planeplayer) crew1(pilot:2) crew2(fallsch_sl:1) crew3(fallsch_sl_asst:1) crew4(fallsch_sa_scope:1) crew5(fallsch_rifle:2) crew6(fallsch_sa:1) crew7(fallsch_sa:1) crew8(fallsch_rifle_grenadier:1) crew9(fallsch_mg:2) crew10(fallsch_mg_asst:2)) 
 
 ;_______________________________________________
 ;|					Aircraft					|
@@ -182,7 +204,11 @@
     {cost -6} 
     {action "airstrike:smoke_cover_callin"}
 }
-
+{"rocket_arty_callinger"
+    ("squad_vehicle" side(ger) period(mid)  min_stage(1) max_stage(99) cw(0) cp(10) crew(pilot:0) vehicle(heavy_mg_maxim))
+    {cost 14} 
+    {action "airstrike:rocket_arty_callinger"}
+}
 {"conquest_bf110"
 	("squad_vehicle2" side(ger) period(mid) min_stage(1) max_stage(99) cw(0) cp(0) crew1(pilot:1) crew2(pilot:1) vehicle(bf110_e2))
 	{cost 5} 

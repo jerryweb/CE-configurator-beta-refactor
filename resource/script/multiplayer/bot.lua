@@ -225,7 +225,7 @@ function OnGameStart()
 			checkMapAIMovementLogic(flag.name)
 		end
 		if flag.name == "f11" or flag.name == "f12" or flag.name == "f13" or flag.name == "f14" or flag.name == "f15" then 
-			forceLoadEarlyDivisions = true
+			forceLoadEarlyDivisions = false
 		end
 
 		totalFlags = totalFlags + 1

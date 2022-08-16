@@ -1,4 +1,4 @@
-from tkinter import messagebox, Toplevel
+from tkinter import messagebox
 from tkinter.ttk import Button
 from tkinter import *
 
@@ -121,34 +121,22 @@ def setWarPeriodModule(rootWindow):
         messagebox.showinfo("Saved")
         campaignPeriod.destroy()
 
-    def setWarPeriodNormal():
-        setWarPeriod(period='normal')
-
-    def setWarPeriodEarly():
-        setWarPeriod(period='earlywar')
-
-    def setWarPeriodMid():
-        setWarPeriod(period='midwar')
-
-    def setWarPeriodLate():
-        setWarPeriod(period='latewar')
-
     def cancel():
         campaignPeriod.destroy()
 
-    normalPeriodButton = Button(campaignPeriod, text="Full War 1939-1945", command=setWarPeriodNormal)
+    normalPeriodButton = Button(campaignPeriod, text="Full War 1939-1945", command=lambda: setWarPeriod(period='normal'))
     # grid(row=2,column=3)
     normalPeriodButton.pack()
 
-    earlyPeriodButton = Button(campaignPeriod,text="Early War 1939-1941",command=setWarPeriodEarly)
+    earlyPeriodButton = Button(campaignPeriod,text="Early War 1939-1941",command=lambda: setWarPeriod(period='earlywar'))
         # .grid(row=3,column=3)
     earlyPeriodButton.pack()
 
-    midPeriodButton = Button(campaignPeriod,text="Mid War 1941-1943",command=setWarPeriodMid)
+    midPeriodButton = Button(campaignPeriod,text="Mid War 1941-1943",command=lambda: setWarPeriod(period='midwar'))
         # .grid(row=4,column=3)
     midPeriodButton.pack()
 
-    latePeriodButton = Button(campaignPeriod,text="Late War 1943-1945",command=setWarPeriodLate)
+    latePeriodButton = Button(campaignPeriod,text="Late War 1943-1945",command=lambda: setWarPeriod(period='latewar'))
         # .grid(row=5,column=3)
     latePeriodButton.pack()
 
