@@ -1,5 +1,5 @@
 {Easy
-	{GlobalMaxCP 500}
+	{GlobalMaxCP 5005}
 	{StageCP 70 70 70 70 70 70 70}
 	{SpecialCP 200}					;// airstrikes special tab
 	{EmplacementCP 50}				;// buildable with engineer
@@ -7,7 +7,7 @@
 		{StartMP	0.05 min 2000 attackerMultiplier 14.0}
 		{FinishMP	0.15 attackerMultiplier 55.5}
 		{CP
-			{Base "0:0,20:0,540:5,900:5,1080:5,1300:6,1500:5,1900:5,2100:6"} ;// seconds : CP
+			{Base "0:0,20:0,540:5,900:5,1080:5,1300:6,1500:5,1900:5,2100:6,3300:0,4200:5"} ;// seconds : CP
 			{RoundMultiplier "0:0.1 1:0.3 2:0.3 3:0.6 4:0.5 5:0.6 6:0.7 7:0.8 11:1.0 15:1.1 20:1.2"} ;// games played : multiplier for CP
 			{AttackMultiplier 6.0}
 		}
@@ -93,7 +93,7 @@
 			{Budget
 				{Start "0:355"} 
 				{PointsPerSecond 0} ;// CP income
-				{Limit 1001} ;// Max CP 
+				{Limit 5001} ;// Max CP 
 			}
 		}
 	}

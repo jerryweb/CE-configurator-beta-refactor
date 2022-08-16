@@ -1,0 +1,32 @@
+{from "mg13_no_bipod"		; "panzer1b"
+	{tag "-mgun_light"}
+	{filling "mgun_ger mg13" 50}	
+	{reloadSound "interior/small/mg34_reload_interior"}	
+	{mass 26.6}	
+	("fire rate" rpm(1100))	
+	("reload time" seconds(10))	
+	("burst_medium")	
+	("spreading_mounted")	
+	("penetration" args 22 10 5 3 0) ;// SmK(H)
+	{thirdpersonparams inherit "human default"
+		{level 1
+			{linkBone	"head"	}
+			{distanceset 		24}
+			{distance			24}	; activation distance
+			{delta		20		}		; distance delta
+			{camera "human_zoom1.25"}
+			{offset		-5	9 1 }
+			{blur_strength 10}
+			{hide_hitmarker 1}
+			{forceGrass 1}
+			{disable_fow 0}
+			{with_weapon
+				{viewoff	"fx_light"}
+			}
+			;{vignette	"/texture/common/environment/lens_effects/zoom_vignette_infantry_01"}
+			;{blur_mask	"/texture/common/environment/lens_effects/zoom_vignette_infantry_01_mask"}
+			{no_grain}
+			{no_rim_light}
+		}
+	}
+}

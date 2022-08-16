@@ -1,0 +1,19 @@
+{game
+	{order 16}
+	{minPlayers	1}
+	{maxPlayers	16}
+	{settings
+		{options			fogOfWar difficulty friendlyFire enableManualControlMode showPiercing showDamageReports enableHardcore enableSpectators}
+		{difficulty			normal}
+		{fogOfWar			fog_realistic}
+		{floraRespawn		0}
+		{friendlyfire		1}
+		{enableManualControlMode dc_mode}
+	}
+	{teamSettings
+		{teamsMode normal}
+		{teams
+			{"coop" {minTeamSlots 16}}
+		}
+	}
+}

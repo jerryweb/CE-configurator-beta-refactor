@@ -1,0 +1,33 @@
+{breed
+	{behaviour soldier}
+	{skin "rus_inf_off_cpt"}
+	{portrait "rus_officer"}
+	{icon "smg"}
+	{icon_priority 5}
+	{nationality rus}
+	{tags "officerai"}
+	{armors
+		{head soviet_commisar_cap}
+	}
+	{perks
+		(include "ability.inc")
+		("smg_skill_rank_3")
+		("binocular_vision")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_0")
+	}
+	{inventory
+		{item "ppsh41_drum" filled}
+		{item "ppsh_drum ammo" 213}
+
+		{item "nagant_revolver" filled}
+		{item "revolver_clip ammo" 18 6}
+
+		{item "bandage_rus" 3.5 0.5}
+		{item "binocular"}
+
+		{in_hands 5}
+	}
+}

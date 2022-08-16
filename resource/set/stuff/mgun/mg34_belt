@@ -1,0 +1,38 @@
+{from "pattern mgun"
+	{filling "mgun_ger" 250}	
+	{entity "mg34_belt"}	
+	{fireSound "mgun/mg34_burst"}	
+	{fireSoundclose "mgun/mg34_burst/3p"}	
+	{reloadSound "mg42"}	
+	{calibre 7.92}	
+	{mass 12.1}	
+	("fire rate" rpm(850))	
+	("velocity" mps(765))	
+	("reload_belt")	
+	("ger_ap_bullets")	
+	("burst_medium")	
+	("spreading_low")
+	{thirdpersonparams inherit "human default"
+		{level 1
+			{linkBone	"foresight14"	}
+			{distanceset 		40}
+			{distance			40}	; activation distance
+			{delta		20		}		; distance delta
+			{nearspace_views 	"fps_arms"	}
+			{nearspace_weapon	1	}
+			{camera "human_zoom1.25"}
+			;{offset		0 12 4.5}
+			{offset		20.5 0.0 1.3}
+			{blur_strength 10}
+			{hide_hitmarker 1}
+			{forceGrass 1}
+			{disable_fow 0}
+			{with_owner
+				{viewoff 	"head"	}
+				{viewoff 	"face"	}
+			}
+			{vignette	"/texture/common/environment/lens_effects/zoom_vignette_infantry_01"}
+			;{blur_mask	"/texture/common/environment/lens_effects/zoom_vignette_infantry_01_mask"}
+		}
+	}
+}

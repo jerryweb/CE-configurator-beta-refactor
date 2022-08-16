@@ -1,0 +1,36 @@
+{from "pattern smg"
+	{filling "ammo mp40" 32}
+    {entity "mp38_unfolded"}
+	{fireSound "smg/mp40_burst"}
+	{fireSoundclose "smg/mp40_burst/3p/"}
+	{reloadSound "mp40"}
+	{calibre 9}
+	{mass 3.97}
+
+	("fire rate" rpm(500))
+	("velocity" mps(400))
+	("spreading_low")
+	("burst_short")
+	{thirdpersonparams inherit "human default"
+		{level 1
+			{linkBone	"foresight11"	}
+			{distanceset 		40}
+			{distance			40}	; activation distance
+			{delta		20		}		; distance delta
+			{nearspace_weapon	1	}
+			{camera "human_zoom1.25"}
+			;{offset		0 12 5}
+			{offset		26.0 0.1 0.75	}
+			{blur_strength 10}
+			{hide_hitmarker 1}
+			{forceGrass 1}
+			{disable_fow 0}
+			{with_owner
+				{viewoff 	"hand2l"}
+				{viewoff 	"face"	}
+			}
+			{vignette	"/texture/common/environment/lens_effects/zoom_vignette_infantry_01"}
+			{blur_mask	"/texture/common/environment/lens_effects/zoom_vignette_infantry_01_mask"}
+		}
+	}
+}

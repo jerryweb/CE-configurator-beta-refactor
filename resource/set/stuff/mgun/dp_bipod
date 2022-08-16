@@ -1,0 +1,38 @@
+{from "pattern mgun"
+	{tag "mgun_light"}
+	{filling "mgun_rus" 47}
+	{entity "dp_bipod"}
+	{fireSound	"mgun/dp_burst/"}
+	{fireSoundclose	"mgun/dp_burst/3p"}
+	{reloadSound "dp"}
+	{calibre 7.62}
+	{mass 9.12}
+
+	("fire rate" rpm(550))
+	("velocity" mps(840))
+
+	("burst_medium")
+	("spreading_low")
+	{thirdpersonparams inherit "human default"
+		{level 1
+			{linkBone	"foresight14"	}
+			{distanceset 		40}
+			{distance			40}	; activation distance
+			{delta		20		}		; distance delta
+			{nearspace_weapon	1	}
+			{camera "human_zoom1"}
+			;{offset		0 12 4.5}
+			{offset		19.0 0.06 0.9}
+			{blur_strength 10}
+			{hide_hitmarker 1}
+			{forceGrass 1}
+			{disable_fow 0}
+			{with_owner
+				{viewoff 	"head"	}
+				{viewoff 	"face"	}
+			}
+			{vignette	"/texture/common/environment/lens_effects/zoom_vignette_infantry_01"}
+			{blur_mask	"/texture/common/environment/lens_effects/zoom_vignette_infantry_01_mask"}
+		}
+	}
+}

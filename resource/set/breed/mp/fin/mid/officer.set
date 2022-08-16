@@ -1,0 +1,32 @@
+{breed
+	{behaviour soldier}
+	{skin "fin_officer"}
+	{portrait "fin_officer"}
+	{icon "tech"}
+	{icon_priority 0}
+	{nationality fin}
+	{armors
+		{head fin_ushanka}
+	}
+	{perks
+		(include "ability.inc")
+		("smg_skill_rank_3")
+		("binocular_vision")
+	}
+	{veterancy
+		(include "ability.inc")
+		("veterancy_lvl_0")
+	}
+	{inventory
+		{item "suomi_m31_stick" filled}
+		{item "suomi_stick ammo" 200}
+		
+		{item "lahti_l35" filled}
+		{item "pistol ammo" 16}
+
+		{item "bandage_fin" 3.5 0.5}
+		{item "binocular"}
+
+		{in_hands 5}
+	}
+}

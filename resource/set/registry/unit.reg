@@ -1,0 +1,1156 @@
+;SDL
+{units
+
+	;Boxes
+	{"inf_crate_ger"
+		{vehicle_view "box"}
+	}
+	{"inf_crate_rus"
+		{vehicle_view "box"}
+	}
+	{"inf_crate_fin"
+		{vehicle_view "box"}
+	}
+
+	;Bicycle
+	{"m42_truppenfahrrad"
+		{vehicle_view "bmw_r71"}
+	}
+
+	;Moto
+	{"bmw_r71"
+		{vehicle_view "bmw_r71"}
+	}
+	{"m72"
+		{vehicle_view "m72"}
+	}
+
+	;Train
+	{"180mm_tm1"
+		{vehicle_view "cannon"}
+	}
+
+	;Airborne Units
+	{"bf109_f4"
+		{vehicle_view "airborne"}
+	}
+	{"bf109_g6"
+		{vehicle_view "airborne"}
+	}
+	{"bf110_e2"
+		{vehicle_view "airborne_2"}
+	}
+	{"ju-87"
+		{vehicle_view "airborne"}
+	}
+	{"il2_mod42"
+		{vehicle_view "airborne"}
+	}
+	{"yak1_ser69"
+		{vehicle_view "airborne"}
+	}
+	{"blenheim_mk1"
+		{vehicle_view "airborne"}
+	}
+
+	;German Cannons
+	{"mg34_lafette"
+		{vehicle_view "mg_stand"}
+	}
+	{"mg42_lafette"
+		{vehicle_view "mg_stand"}
+	}
+	{"heavy_mg_mg34"
+		{vehicle_view "mg_stand"}
+	}
+	{"panzernest_krab"
+		{vehicle_view "mg_stand"}
+	}
+	{"20mm_flak30"
+		{vehicle_view "cannon"}
+	}
+	{"37mm_flak37"
+		{vehicle_view "cannon"}
+	}
+	{"28mm_pzb41"
+		{vehicle_view "cannon"}
+	}
+	{"37mm_pak36"
+		{vehicle_view "cannon_pak36"}
+	}
+	{"37mm_pak36_late"
+		{vehicle_view "cannon_pak36"}
+	}
+	{"47mm_pakt"
+		{vehicle_view "cannon"}
+	}
+	{"50mm_flak41"
+		{vehicle_view "52k"}
+	}
+	{"50mm_pak38"
+		{vehicle_view "cannon"}
+	}
+	{"50mm_pak38_late"
+		{vehicle_view "cannon"}
+	}
+	{"75mm_lg40"
+		{vehicle_view "cannon"}
+	}
+	{"75mm_legebig18"
+		{vehicle_view "cannon"}
+	}
+	{"75mm_legebig18_snow"
+		{vehicle_view "cannon"}
+	}
+	{"75mm_leig18"
+		{vehicle_view "cannon"}
+	}
+	{"75mm_pak40"
+		{vehicle_view "cannon"}
+	}
+	{"75mm_pak9738"
+		{vehicle_view "cannon"}
+	}
+	{"75mm_fk18"
+		{vehicle_view "cannon"}
+	}
+	{"80mm_sgrw34"
+		{vehicle_view "mortar_ger"}
+	}
+	{"100mm_nbw35"
+		{vehicle_view "mortar_ger"}
+	}
+	{"80mm_sgrw34_rapid"
+		{vehicle_view "mortar_ger"}
+	}
+	{"88mm_flak18"
+		{vehicle_view "flak18"}
+	}
+	{"88mm_flak36"
+		{vehicle_view "flak18"}
+	}
+	{"105mm_lefh18"
+		{vehicle_view "cannon"}
+	}
+	{"105mm_lefh18m"
+		{vehicle_view "cannon"}
+	}
+	{"105mm_sk18"
+		{vehicle_view "cannon"}
+	}
+	{"120mm_sgrw42"
+		{vehicle_view "mortar_ger"}
+	}
+	{"150mm_nebelwerfer41"
+		{vehicle_view "cannon"}
+	}
+	{"150mm_sfh18"
+		{vehicle_view "cannon"}
+	}
+	{"150mm_sig33"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"150mm_sw34"
+		{vehicle_view "cannon"}
+	}
+	{"200mm_ldgw40"
+		{vehicle_view "mortar_ger"}
+	}
+	{"210mm_morser18"
+		{vehicle_view "cannon"}
+	}
+	{"210mm_nebelwerfer42"
+		{vehicle_view "cannon"}
+	}
+	{"300mm_nebelwerfer42"
+		{vehicle_view "cannon"}
+	}
+
+	;German Cars
+	{"blitz3_6"
+		{vehicle_view "car"}
+	}
+	{"blitz3_6_art_ammo"
+		{vehicle_view "car"}
+	}
+	{"blitz3_6_flak30"
+		{vehicle_view "opel_flak30"}
+	}
+	{"blitz3_6_fuel"
+		{vehicle_view "car"}
+	}
+	{"blitz3_6_radio"
+		{vehicle_view "car"}
+	}
+	{"blitz3_6_engineering"
+		{vehicle_view "car"}
+	}
+	{"kubelwagen"
+		{vehicle_view "kubelwagen"}
+	}
+	{"kubelwagen_dak"
+		{vehicle_view "kubelwagen"}
+	}
+	{"kubelwagen_mg"
+		{vehicle_view "kubelwagen"}
+	}
+	{"kfz15"
+		{vehicle_view "kubelwagen"}
+	}
+	{"opel_maultier"
+		{vehicle_view "car"}
+	}
+	{"kettenkrad"
+		{vehicle_view "kettenkrad"}
+	}
+	{"kettenkrad_eng"
+		{vehicle_view "kettenkrad"}
+	}
+	
+	;German BTR's
+	{"p204_f"
+		{vehicle_view "p204"}
+	}
+	{"p204_f_rail"
+		{vehicle_view "p204"}
+	}
+	{"sdkfz4"
+		{vehicle_view "armored_car"}
+	}
+	{"sdkfz6_2"
+		{vehicle_view "sdkfz7_2"}
+	}
+	{"sdkfz7"
+		{vehicle_view "sdkfz7"}
+	}
+	{"sdkfz7_2"
+		{vehicle_view "sdkfz7_2"}
+	}
+	{"sdkfz8_flak18"
+		{vehicle_view "sdkfz10_pak"}
+	}
+	{"sdkfz10"
+		{vehicle_view "sdkfz10"}
+	}
+	{"sdkfz10_4"
+		{vehicle_view "sdkfz10_pak"}
+	}
+	{"sdkfz10_pak38"
+		{vehicle_view "sdkfz10_pak"}
+	}
+	{"sdkfz221"
+		{vehicle_view "sdkfz221"}
+	}
+	{"sdkfz222a"
+		{vehicle_view "sdkfz222"}
+	}
+	{"sdkfz231"
+		{vehicle_view "armored_car"}
+	}
+	{"sdkfz234_2"
+		{vehicle_view "puma"}
+	}
+	{"sdkfz250a_1"
+		{vehicle_view "sdkfz250_1"}
+	}
+	{"sdkfz250a_3"
+		{vehicle_view "sdkfz250_1"}
+	}
+	{"sdkfz250a_11"
+		{vehicle_view "sdkfz250_11"}
+	}
+	{"sdkfz251c"
+		{vehicle_view "sdkfz251c"}
+	}
+	{"sdkfz251c_tarp"
+		{vehicle_view "sdkfz251c"}
+	}
+	{"sdkfz251c_2"
+		{vehicle_view "sdkfz251c_2"}
+	}
+	{"kfz13"
+		{vehicle_view "kfz13"}
+	}
+	{"kfz14"
+		{vehicle_view "kfz13"}
+	}
+
+	;German Light Tanks
+	{"bison"
+		{vehicle_view "marder2"}
+	}
+	{"hetzer"
+		{vehicle_view "stug3f"}
+	}
+	{"grille_m"
+		{vehicle_view "marder2"}
+	}
+	{"marder2"
+		{vehicle_view "marder2"}
+	}
+	{"marder3m"
+		{vehicle_view "marder2"}
+	}
+	{"panzer1b"
+		{vehicle_view "pz2f"}
+	}
+	{"panzer1f"
+		{vehicle_view "pz2f"}
+	}
+	{"panzer2c"
+		{vehicle_view "pz2f"}
+	}
+	{"panzer2f"
+		{vehicle_view "pz2f"}
+	}
+	{"panzer2l"
+		{vehicle_view "pz2f"}
+	}
+	{"panzerjager1"
+		{vehicle_view "marder2"}
+	}
+	{"pz35t"
+		{vehicle_view "pz35"}
+	}
+	{"pz38t_a"
+		{vehicle_view "pz38"}
+	}
+	{"pz38t_f"
+		{vehicle_view "pz38"}
+	}
+	{"pz38t_g"
+		{vehicle_view "pz38"}
+	}
+	{"sdkfz302"
+		{vehicle_view "sdkfz302"}
+	}
+	{"sdkfz303b"
+		{vehicle_view "sdkfz302"}
+	}
+	{"pz38h_735"
+		{vehicle_view "pz38h_735"}
+	}
+	{"pz38h_w40"
+		{vehicle_view "pz38h_735"}
+	}
+
+	;German Medium Tanks
+	{"panzer35s"
+		{vehicle_view "pz35s"}
+	}
+	{"jagdpanther"
+		{vehicle_view "stug3f"}
+	}
+	{"panzer3_flamm"
+		{vehicle_view "panzer3l"}
+	}
+	{"panzer3e"
+		{vehicle_view "panzer3e"}
+	}
+	{"panzer3f"
+		{vehicle_view "panzer3e"}
+	}
+	{"panzer3h"
+		{vehicle_view "panzer3e"}
+	}
+	{"panzer3j"
+		{vehicle_view "panzer3e"}
+	}
+	{"panzer3j1"
+		{vehicle_view "panzer3e"}
+	}
+	{"panzer3l"
+		{vehicle_view "panzer3l"}
+	}
+	{"panzer3m"
+		{vehicle_view "panzer3l"}
+	}
+	{"panzer3n"
+		{vehicle_view "panzer3l"}
+	}
+	{"panzer4d"
+		{vehicle_view "panzer4d"}
+	}
+	{"panzer4f1"
+		{vehicle_view "panzer4f1"}
+	}
+	{"panzer4f2"
+		{vehicle_view "panzer4f1"}
+	}
+	{"panzer4g"
+		{vehicle_view "panzer4j"}
+	}
+	{"panzer4h"
+		{vehicle_view "panzer4j"}
+	}
+	{"panzer4j"
+		{vehicle_view "panzer4j"}
+	}
+	{"panzer5d"
+		{vehicle_view "panzer5"}
+	}
+	{"panzer5a"
+		{vehicle_view "panzer5"}
+	}
+	{"panzer5g"
+		{vehicle_view "panzer5"}
+	}
+	{"sig33b"
+		{vehicle_view "sig33b"}
+	}
+	{"stug3b"
+		{vehicle_view "stug3f"}
+	}
+	{"stug3f"
+		{vehicle_view "stug3f"}
+	}
+	{"stug3g"
+		{vehicle_view "stug3g"}
+	}
+	{"stug3g_late"
+		{vehicle_view "stug3_late"}
+	}
+	{"stuh42"
+		{vehicle_view "stug_h42"}
+	}
+	{"sturmpanzer4"
+		{vehicle_view "sturmpanzer4"}
+	}
+
+	;German Heavy Tanks
+	{"panzerb2"
+		{vehicle_view "b2_bis"}
+	}
+	{"pz756r"
+		{vehicle_view "pz756r"}
+	}
+	{"ferdinand"
+		{vehicle_view "ferdinand"}
+	}
+	{"sturmtiger"
+		{vehicle_view "sturmtiger"}
+	}
+	{"tiger1e"
+		{vehicle_view "tiger_1h"}
+	}
+	{"tiger1h"
+		{vehicle_view "tiger_1h"}
+	}
+	{"tiger1hunt"
+		{vehicle_view "tiger_1h"}
+	}
+	{"tiger2h"
+		{vehicle_view "tiger2h"}
+	}
+	{"tiger2p"
+		{vehicle_view "tiger2h"}
+	}
+
+	;Soviet Airborne Units
+	{"il-2"
+		{vehicle_view "airborne"}
+	}
+
+	;Soviet Cannons
+	{"broneschitok_1"
+		{vehicle_view "cannon"}
+	}
+	{"broneschitok_2"
+		{vehicle_view "cannon"}
+	}
+	{"broneschitok_2_dp"
+		{vehicle_view "cannon"}
+	}
+	{"maxim"
+		{vehicle_view "mg_maxim"}
+	}
+	{"maxim_stand"
+		{vehicle_view "mg_maxim"}
+	}
+	{"maxim_x4"
+		{vehicle_view "mg_maxim"}
+	}
+	{"heavy_mg_maxim"
+		{vehicle_view "mg_maxim"}
+	}
+	{"sg43_stand"
+		{vehicle_view "mg_maxim"}
+	}
+	{"ds39_stand"
+		{vehicle_view "mg_stand"}
+	}
+	{"dshk_aa"
+		{vehicle_view "mg_dshk"}
+	}
+	{"dshk_stan"
+		{vehicle_view "mg_dshk"}
+	}
+	{"25mm_72k"
+		{vehicle_view "52k"}
+	}
+	{"37mm_61k"
+		{vehicle_view "52k"}
+	}
+	{"45mm_m37"
+		{vehicle_view "cannon_m37"}
+	}
+	{"45mm_m42"
+		{vehicle_view "cannon_m37"}
+	}
+	{"57mm_zis2"
+		{vehicle_view "cannon"}
+	}
+	{"76mm_m1902"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"76mm_bpk76"
+		{vehicle_view "cannon"}
+	}
+	{"76mm_m1927"
+		{vehicle_view "cannon"}
+	}
+	{"76mm_m43"
+		{vehicle_view "cannon_m37"}
+	}
+	{"76mm_m1933"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"76mm_f22"
+		{vehicle_view "cannon"}
+	}
+	{"76mm_zis3"
+		{vehicle_view "cannon"}
+	}
+	{"82mm_bm37"
+		{vehicle_view "mortar_rus"}
+	}
+	{"85mm_52k"
+		{vehicle_view "52k"}
+	}
+	{"100mm_bs3"
+		{vehicle_view "cannon"}
+	}
+	{"107mm_m1910_30"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"122mm_a19"
+		{vehicle_view "cannon"}
+	}
+	{"122mm_m1910"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"122mm_m30"
+		{vehicle_view "cannon"}
+	}
+	{"152mm_ml20"
+		{vehicle_view "cannon"}
+	}
+	{"152mm_br2"
+		{vehicle_view "b4"}
+	}
+	{"203mm_b4"
+		{vehicle_view "b4"}
+	}
+	{"280mm_br5"
+		{vehicle_view "b4"}
+	}
+	{"120mm_pm38"
+		{vehicle_view "mortar_rus"}
+	}
+	{"m41_ampulomet"
+		{vehicle_view "m41_ampulomet"}
+	}
+
+	;Soviet Cars
+	{"gaz67"
+		{vehicle_view "gaz67"}
+	}
+	{"gaz67b"
+		{vehicle_view "gaz67b"}
+	}
+	{"bm13_studebaker"
+		{vehicle_view "bm13_studebaker"}
+	}
+	{"bm31_12"
+		{vehicle_view "bm31_12_studebaker"}
+	}
+	{"gaz_aaa"
+		{vehicle_view "gaz"}
+	}
+	{"gaz_aaa_72k"
+		{vehicle_view "gaz_aa"}
+	}
+	{"gaz_aaa_maximx4"
+		{vehicle_view "gaz_aa_maxim"}
+	}
+	{"gaz_aaa_supply"
+		{vehicle_view "gaz"}
+	}
+	{"gaz_fuel"
+		{vehicle_view "gaz"}
+	}
+	{"zis5eng"
+		{vehicle_view "zis5"}
+	}
+	{"zis5"
+		{vehicle_view "zis5"}
+	}
+	{"zis5_dshk"
+		{vehicle_view "zis5_dshk"}
+	}
+
+	;Soviet BTR's
+	{"t20"
+		{vehicle_view "t20"}
+	}
+	{"universal_carrier_rus"
+		{vehicle_view "universal"}
+	}
+	{"mmg_carrier_rus"
+		{vehicle_view "universal"}
+	}
+	{"fai_m"
+		{vehicle_view "ba20"}
+	}
+	{"ba20"
+		{vehicle_view "ba20"}
+	}
+	{"ba20_command"
+		{vehicle_view "ba20"}
+	}
+	{"ba6"
+		{vehicle_view "ba6"}
+	}
+	{"ba64"
+		{vehicle_view "ba20"}
+	}
+	{"ba10"
+		{vehicle_view "ba10"}
+	}
+	{"ba10_fin"
+		{vehicle_view "ba10_fin"}
+	}
+	{"nkl26"
+		{vehicle_view "nkl26"}
+	}
+	{"gaz98"
+		{vehicle_view "nkl26"}
+	}
+	{"stalinetz60"
+		{vehicle_view "armored_car"}
+	}
+	{"t27"
+		{vehicle_view "t20"}
+	}
+	{"m3a1e1_scout"
+		{vehicle_view "armored_car_m3a1e1"}
+	}
+	{"m3a1e1_scout_mgun"
+		{vehicle_view "armored_car_m3a1e1"}
+	}
+
+	;Soviet Light Tanks
+	{"bt2"
+		{vehicle_view "bt2"}
+	}
+	{"bt2_da2"
+		{vehicle_view "bt2"}
+	}
+	{"bt5"
+		{vehicle_view "bt5"}
+	}
+	{"bt7"
+		{vehicle_view "bt7"}
+	}
+	{"bt7a"
+		{vehicle_view "bt7a"}
+	}
+	{"panzer742r"
+		{vehicle_view "bt5"}
+	}
+	{"su76"
+		{vehicle_view "su76"}
+	}
+	{"kht26"
+		{vehicle_view "kht26"}
+	}
+	{"t26_31"
+		{vehicle_view "t26_31"}
+	}
+	{"t26_33"
+		{vehicle_view "t26"}
+	}
+	{"t26_38"
+		{vehicle_view "t26"}
+	}
+	{"t26_39"
+		{vehicle_view "t26"}
+	}
+	{"t37a"
+		{vehicle_view "t37a"}
+	}
+	{"panzer731r"
+		{vehicle_view "t70"}
+	}
+	{"t30"
+		{vehicle_view "t70"}
+	}
+	{"t40"
+		{vehicle_view "t70"}
+	}
+	{"t50"
+		{vehicle_view "t50"}
+	}
+	{"t60"
+		{vehicle_view "t70"}
+	}
+	{"t70"
+		{vehicle_view "t70"}
+	}
+	{"t70m"
+		{vehicle_view "t70"}
+	}
+
+	;Soviet Medium Tanks
+	{"zis30"
+		{vehicle_view "zis30"}
+	}
+	{"su85"
+		{vehicle_view "su85"}
+	}
+	{"su100"
+		{vehicle_view "su85"}
+	}
+	{"su122"
+		{vehicle_view "su85"}
+	}
+	{"t28"
+		{vehicle_view "t28"}
+	}
+	{"t28e"
+		{vehicle_view "t28"}
+	}
+	{"t3457_41"
+		{vehicle_view "t34_40"}
+	}
+	{"t3457_43"
+		{vehicle_view "t34_76"}
+	}
+	{"t3476_40"
+		{vehicle_view "t34_40"}
+	}
+	{"t3476_41"
+		{vehicle_view "t34_40"}
+	}
+	{"t3476_42"
+		{vehicle_view "t34_76"}
+	}
+	{"t3476_43"
+		{vehicle_view "t34_76"}
+	}
+	{"t3476_43_flame"
+		{vehicle_view "t34_76"}
+	}
+	{"t3485_44"
+		{vehicle_view "t34_85"}
+	}
+
+	;Soviet Heavy Tanks
+	{"smk"
+		{vehicle_view "smk"}
+	}
+	{"t35"
+		{vehicle_view "t35"}
+	}
+	{"t35_late"
+		{vehicle_view "t35"}
+	}
+	{"kv1_39"
+		{vehicle_view "kv1_42"}
+	}
+	{"kv1_40"
+		{vehicle_view "kv1_41"}
+	}
+	{"kv1_40e"
+		{vehicle_view "kv1_41"}
+	}
+	{"kv1_41"
+		{vehicle_view "kv1_41"}
+	}
+	{"kv1_42"
+		{vehicle_view "kv1_41"}
+	}
+	{"kv2_40"
+		{vehicle_view "kv2"}
+	}
+	{"kv1s"
+		{vehicle_view "kv1s"}
+	}
+	{"kv85"
+		{vehicle_view "kv1s"}
+	}
+	{"is1_43"
+		{vehicle_view "is1_43"}
+	}
+	{"is2_43"
+		{vehicle_view "is1_43"}
+	}
+	{"is2_44"
+		{vehicle_view "is1_43"}
+	}
+	{"su100y"
+		{vehicle_view "su100y"}
+	}
+	{"isu122s"
+		{vehicle_view "isu152"}
+	}
+	{"su152"
+		{vehicle_view "isu152"}
+	}
+	{"isu152"
+		{vehicle_view "isu152"}
+	}
+
+	;British Light Tanks
+	{"valentine2"
+		{vehicle_view "valentine2"}
+	}
+	{"valentine7"
+		{vehicle_view "valentine2"}
+	}
+	{"valentine9"
+		{vehicle_view "valentine2"}
+	}
+
+	;British Heavy Tanks
+	{"churchill3"
+		{vehicle_view "churchill3"}
+	}
+
+	;Finnish Cannons
+	{"heavy_mg_maxim_m1910_30"
+		{vehicle_view "mg_maxim"}
+	}
+	{"maxim_m1910_30"
+		{vehicle_view "mg_maxim"}
+	}
+	{"ds39_stand_fin"
+		{vehicle_view "mg_stand"}
+	}
+	{"20mm_itk35"
+		{vehicle_view "cannon"}
+	}
+	{"20mm_itk40"
+		{vehicle_view "cannon"}
+	}
+	{"20mm_l39"
+		{vehicle_view "mg_stand"}
+	}
+	{"37mm_pstk36"
+		{vehicle_view "cannon"}
+	}
+	{"40mm_itk38b"
+		{vehicle_view "52k"}
+	}
+	{"45mm_pstk32"
+		{vehicle_view "cannon"}
+	}
+	{"47mm_pstk39"
+		{vehicle_view "cannon"}
+	}
+	{"50mm_krh38"
+		{vehicle_view "mortar_rus"}
+	}
+	{"50mm_pstk38"
+		{vehicle_view "cannon"}
+	}
+	{"50mm_pstk38_late"
+		{vehicle_view "cannon"}
+	}
+	{"75mm_pstk9738"
+		{vehicle_view "cannon"}
+	}
+	{"75mm_k40"
+		{vehicle_view "cannon"}
+	}
+	{"75mm_k44"
+		{vehicle_view "cannon"}
+	}
+	{"75mm_itk37"
+		{vehicle_view "flak18"}
+	}
+	{"75mm_itk37_stat"
+		{vehicle_view "flak18"}
+	}
+	{"76mm_k02"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"76mm_k02_30_40"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"76mm_m1927_fin"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"76mm_k36"
+		{vehicle_view "cannon"}
+	}
+	{"81mm_krh36"
+		{vehicle_view "mortar_rus"}
+	}
+	{"84mm_k18"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"84mm_k18_late"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"100mm_nbw35"
+		{vehicle_view "mortar_ger"}
+	}
+	{"105mm_h33"
+		{vehicle_view "cannon"}
+	}
+	{"105mm_k34"
+		{vehicle_view "cannon"}
+	}
+	{"105mm_k13"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"107mm_k10"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"120mm_krh40"
+		{vehicle_view "mortar_rus"}
+	}
+	{"120mm_k78_31"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"122mm_m1910_fin"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"150mm_rkh41"
+		{vehicle_view "cannon"}
+	}
+	{"150mm_h40"
+		{vehicle_view "cannon"}
+	}
+	{"155mm_h17"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"170mm_minewerfer"
+		{vehicle_view "mortar_rus"}
+	}
+	{"203mm_h17"
+		{vehicle_view "cannon_sig33"}
+	}
+
+	;Finnish Cars
+	{"ford_v3000"
+		{vehicle_view "fordV3000"}
+	}
+	{"ford_v3000_eng"
+		{vehicle_view "fordV3000"}
+	}
+	{"ford_v3000_ammo"
+		{vehicle_view "fordV3000"}
+	}
+    {"ford_v3000_fuel"
+		{vehicle_view "fordV3000"}
+	} 
+	{"ford_3ton"
+		{vehicle_view "fordV3000"}
+	}
+	{"ford_3ton_eng"
+		{vehicle_view "fordV3000"}
+	}
+	{"ford_3ton_ammo"
+		{vehicle_view "fordV3000"}
+	}
+    {"ford_3ton_fuel"
+		{vehicle_view "fordV3000"}
+	}  
+	{"ford_3ton_breda"
+		{vehicle_view "fordV3000_breda"}
+	} 
+
+	;Finnish BTRs
+	{"t20_fin"
+		{vehicle_view "t20_fin"}
+	}
+	{"l182"
+		{vehicle_view "l182"}
+	}
+	
+	;Finnish Light Tanks
+	{"ft17_fin"
+		{vehicle_view "ft17_fin"}
+	}
+	{"ft17_mg_fin"
+		{vehicle_view "ft17_fin"}
+	}
+	{"vickers_6t_altb"
+		{vehicle_view "vickers_6t_altb"}
+	}
+	{"t37a_fin"
+		{vehicle_view "t37a_fin"}
+	}
+	{"t26_33_fin"
+		{vehicle_view "t26_fin"}
+	}
+	{"t26e"
+		{vehicle_view "t26e_fin"}
+	}
+	{"kht130_fin"
+		{vehicle_view "kht130_fin"}
+	}
+	{"bt5_fin"
+		{vehicle_view "bt5_fin"}
+	}
+	{"bt42"
+		{vehicle_view "bt42"}
+	}
+	{"l62"
+		{vehicle_view "l62"}
+	}
+	{"t50_fin"
+		{vehicle_view "t50_fin"}
+	}
+
+	;Finnish Medium Tanks
+	{"t28_38_fin"
+		{vehicle_view "t28_fin"}
+	}
+	{"stug3g_fin"
+		{vehicle_view "stug3g_fin"}
+	}
+	{"panzer4j_fin"
+		{vehicle_view "panzer4j_fin"}
+	}
+	{"t3476_41_fin"
+		{vehicle_view "t34_40"}
+	}
+	{"t3485_44_fin"
+		{vehicle_view "t34_85_fin"}
+	}
+
+	;Finnish Heavy Tanks
+	{"kv1_40e_fin"
+		{vehicle_view "kv1_41"}
+	}
+	{"kv1_42_fin"
+		{vehicle_view "kv1_42_fin"}
+	}
+	{"isu152_fin"
+		{vehicle_view "isu152_fin"}
+	}
+
+	;Conquest Enhance Units
+
+	;Airborne Units
+	{"ju-52_para_plane"
+		{vehicle_view "airborne"}
+	}
+	{"ju-52"
+		{vehicle_view "airborne"}
+	}
+	{"ju-52_para_plane_player"
+		{vehicle_view "airborne"}
+	}
+	{"fi156"
+		{vehicle_view "airborne"}
+	}
+	{"blenheim_mk1playerplane"
+		{vehicle_view "airborne"}
+	}
+	{"po2"
+		{vehicle_view "airborne"}
+	}
+	{"il2_mod42_para_plane"
+		{vehicle_view "airborne"}
+	}
+	{"il2_mod42_para_planeplayer"
+		{vehicle_view "airborne"}
+	}
+
+	;German Cannons
+	{"105mm_lefh18ai"
+		{vehicle_view "cannon"}
+	}
+	{"150mm_nebelwerfer41ai"
+		{vehicle_view "cannon"}
+	}
+	{"150mm_sfh18ai"
+		{vehicle_view "cannon"}
+	}
+	{"150mm_sig33ai"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"210mm_morser18ai"
+		{vehicle_view "cannon"}
+	}
+	{"210mm_nebelwerfer42"
+		{vehicle_view "cannon"}
+	}
+	{"300mm_nebelwerfer42ai"
+		{vehicle_view "cannon"}
+	}
+
+	;Soviet Cannons
+	{"122mm_a19ai"
+		{vehicle_view "cannon"}
+	}
+	{"122mm_m30ai"
+		{vehicle_view "cannon"}
+	}
+	{"152mm_ml20ai"
+		{vehicle_view "cannon"}
+	}
+	{"152mm_br2ai"
+		{vehicle_view "b4"}
+	}
+	{"203mm_b4ai"
+		{vehicle_view "b4"}
+	}
+	{"280mm_br5ai"
+		{vehicle_view "b4"}
+	}
+
+	;Soviet Cars
+	{"bm13_studebakerai"
+		{vehicle_view "bm13_studebaker"}
+	}
+	{"bm31_12ai"
+		{vehicle_view "bm31_12_studebaker"}
+	}
+
+	;Finnish Cannons
+	{"105mm_k13ai"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"120mm_k78_31ai"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"122mm_m1910_finai"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"150mm_rkh41ai"
+		{vehicle_view "cannon"}
+	}
+	{"150mm_h40ai"
+		{vehicle_view "cannon"}
+	}
+	{"155mm_h17ai"
+		{vehicle_view "cannon_sig33"}
+	}
+	{"170mm_minewerferai"
+		{vehicle_view "mortar_rus"}
+	}
+	{"203mm_h17ai"
+		{vehicle_view "cannon_sig33"}
+	}
+
+	;Finnish BTRs
+	{"ba20_command_fin"
+		{vehicle_view "ba20"}
+	}
+
+}

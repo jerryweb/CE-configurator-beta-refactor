@@ -1,0 +1,15 @@
+{from "pattern smg"
+	{filling "ammo suomi_drum" 72}
+	{entity "suomi_m31_drum"}
+	{fireSound "smg/kp31_burst/"}
+	{fireSoundclose "smg/kp31_burst/3p/"}
+	{reloadSound "ppsh41"}
+	{calibre 9}
+	{mass 4.72}
+
+	("fire rate" rpm(900))
+	("velocity" mps(396))
+	("spreading_low")
+	("burst_long")
+	("recoil_smg_low")
+}

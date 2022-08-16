@@ -1,0 +1,4 @@
+{from "suomi_m31_drum"
+	{entity "suomi_m31_tank"}
+	("spreading_mounted")
+}

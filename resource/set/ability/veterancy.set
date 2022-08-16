@@ -1,0 +1,111 @@
+(include "/set/ability/veterancy_ce_ext.set")
+
+{"lvl_0" from veterancy
+	{"health" 					0}	;+%
+	{"health_regeneration" 		0}	;+%
+	{"stamina" 					0}	;+%
+	{"stamina_regeneration"		0}	;+%
+	{"resource_regeneration"	0}	;+%
+	{"tank" 					0}	;+%	;// currently disabled
+	{"vehicle" 					0}	;+%	;// currently disabled
+	{"cannon" 					0}	;+%	;// currently disabled
+	{"weapon_reload"			0}	;+%
+	{"weapon_skill"				0}	;+lvl
+	{"medic"					0}	;+%
+}
+{"lvl_1" from veterancy
+	{"health" 					0.0}
+	{"health_regeneration" 		0.0}
+	{"stamina" 					0.10}
+	{"stamina_regeneration"		0.10}
+	{"tank" 					0.05}
+	{"vehicle" 					0.05}
+	{"cannon" 					0.05}
+	{"weapon_reload"			0.10}
+	{"weapon_skill"				0}
+	{"medic"					0}
+}
+{"lvl_2" from veterancy
+	{"health" 					0.0}
+	{"health_regeneration" 		0.0}
+	{"stamina" 					0.15}
+	{"stamina_regeneration" 	0.15}
+	{"tank" 					0.10}
+	{"vehicle" 					0.10}
+	{"cannon" 					0.10}
+	{"weapon_reload"			0.15}
+	{"weapon_skill"				1}
+	{"medic"					0}
+}
+{"lvl_3" from veterancy
+	{"health" 					0.0}
+	{"health_regeneration" 		0.0}
+	{"stamina" 					0.20}
+	{"stamina_regeneration" 	0.20}
+	{"tank" 					0.15}
+	{"vehicle" 					0.15}
+	{"cannon" 					0.15}
+	{"weapon_reload"			0.20}
+	{"weapon_skill"				1}
+	{"medic"					0}
+}
+{"lvl_4" from veterancy
+	{"health" 					0.10}
+	{"health_regeneration" 		1.00}
+	{"stamina" 					0.25}
+	{"stamina_regeneration" 	0.25}
+	{"tank" 					0.20}
+	{"vehicle" 					0.20}
+	{"cannon" 					0.20}
+	{"weapon_reload"			0.25}
+	{"weapon_skill"				2}
+	{"medic"					0}
+}
+{"lvl_5" from veterancy
+	{"health" 					0.15}
+	{"health_regeneration" 		2.00}
+	{"stamina" 					0.30}
+	{"stamina_regeneration" 	0.30}
+	{"tank" 					0.25}
+	{"vehicle" 					0.25}
+	{"cannon" 					0.25}
+	{"weapon_reload"			0.30}
+	{"weapon_skill"				2}
+	{"medic"					0}
+}
+{"lvl_6" from veterancy
+	{"health" 					0.20}
+	{"health_regeneration" 		3.00}
+	{"stamina" 					0.35}
+	{"stamina_regeneration" 	0.35}
+	{"tank" 					0.25}
+	{"vehicle" 					0.25}
+	{"cannon" 					0.25}
+	{"weapon_reload"			0.30}
+	{"weapon_skill"				2}
+	{"medic"					0}
+}
+{"lvl_7" from veterancy
+	{"health" 					0.25}
+	{"health_regeneration"		4.00}
+	{"stamina" 					0.40}
+	{"stamina_regeneration"		0.40}
+	{"tank" 					0.25}
+	{"vehicle" 					0.25}
+	{"cannon" 					0.25}
+	{"weapon_reload"			0.30}
+	{"weapon_skill"				3}
+	{"medic"					0}
+}
+{"lvl_8" from veterancy
+	{"health" 					0.25}
+	{"health_regeneration"		5.00}
+	{"stamina" 					0.50}
+	{"stamina_regeneration"		0.50}
+	{"tank" 					0.25}
+	{"vehicle" 					0.25}
+	{"cannon" 					0.25}
+	{"weapon_reload"			0.30}
+	{"weapon_skill"				3}
+	{"medic"					0.50}
+}

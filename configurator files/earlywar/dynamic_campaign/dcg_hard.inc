@@ -7,7 +7,7 @@
 		{StartMP	0.05 min 3002 attackerMultiplier 14.0}
 		{FinishMP	0.15 attackerMultiplier 55.5}
 		{CP
-			{Base "0:0,60:0,540:11,960:10,1080:10,1300:10,1500:11,1800:13,2100:10"} ;// seconds : CP
+			{Base "0:0,60:0,480:11,960:10,1080:10,1300:10,1500:12,1900:10,3300:0,4200:10"} ;// seconds : CP
 			{RoundMultiplier "0:0.1 1:0.3 2:0.3 3:0.6 4:0.5 5:0.6 6:0.7 7:0.8 11:1.0 15:1.1 20:1.2"} ;// games played : multiplier for CP
 			{AttackMultiplier 3.9}
 		}
@@ -93,7 +93,7 @@
 			{Budget
 				{Start "0:501"} 
 				{PointsPerSecond 0} ;// CP income
-				{Limit 1001} ;// Max CP 
+				{Limit 5001} ;// Max CP 
 			}
 		}
 	}

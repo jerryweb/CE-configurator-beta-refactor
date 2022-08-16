@@ -1,0 +1,36 @@
+{from "pattern rifle"
+	{tag "rifle_stab_melee -rifle_slap_melee"}
+	{filling "ammo rifle_ger clip" 5}
+	{entity "k98_bayonet"}
+	{fireSound "rifle/kar98_shot"}
+	{fireSoundclose "rifle/kar98_shot/3p/"}
+	{reloadSound "kar98"}
+	{calibre 7.92}
+	{mass 4}
+
+	("velocity" mps(760))
+	("bolt_action")
+	("k98_rate")
+	{thirdpersonparams inherit "human default"
+		{level 1
+			{linkBone	"foresight12"	}
+			{distanceset 		40}
+			{distance			40}	; activation distance
+			{delta		20		}		; distance delta
+			{nearspace_weapon	1	}
+			{camera "human_zoom1.25"}
+			;{offset		0 12 5}
+			{offset		20.0 -0.03 0.45	}
+			{blur_strength 10}
+			{hide_hitmarker 1}
+			{forceGrass 1}
+			{disable_fow 0}
+			{with_owner
+				{viewoff 	"hand2l"}
+				{viewoff 	"face"	}
+			}
+			{vignette	"/texture/common/environment/lens_effects/zoom_vignette_infantry_01"}
+			{blur_mask	"/texture/common/environment/lens_effects/zoom_vignette_infantry_01_mask"}
+		}
+	}
+}
