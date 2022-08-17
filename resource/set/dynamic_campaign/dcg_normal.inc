@@ -1,6 +1,6 @@
 {Normal
 	{GlobalMaxCP 1900}
-	{StageCP 110 110 1146 110 110 110 110}
+	{StageCP 110 110 110 110 110 110 110}
 	{SpecialCP 1001}					;// airstrikes special tab
 	{EmplacementCP 50}				;// buildable with engineer
 	{Bots

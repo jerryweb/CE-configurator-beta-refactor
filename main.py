@@ -1,4 +1,5 @@
 from player_army_size import *
+from starting_player_resources import *
 from war_period_logic import *
 from labels_text import *
 from ai_army_size import *
@@ -35,5 +36,8 @@ aiArmyButton.grid(row=3, column=1)
 playerArmyButton = Button(root, text="Player army size",
                           command=lambda: setPlayerArmySizeModule(rootWindow=root, aiDifficulty=difficulty))
 playerArmyButton.grid(row=4, column=1)
+
+resourcesStartButton = Button(root, text="Starting Player Resources", command=lambda: setStartingPlayerResources(rootWindow=root, aiDifficulty=difficulty))
+resourcesStartButton.grid(row=5,column=1)
 
 root.mainloop()

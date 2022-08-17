@@ -58,18 +58,22 @@ def setPlayerArmySizeModule(rootWindow, aiDifficulty):
                 print(stageEntries[idx].get().isdigit())
                 newStages.append(str(int(stageSizesVariable[idx].get())))
 
+
+
             print("saving")
             newLengthFile = open(fileToRead, "w")
 
             newPlayerStages = " ".join(newStages)
             newFile = (wholeFile.replace(currentStagesLine, newPlayerStages))
-            newFile = (newFile.replace(currentAmmoPointsLine,   newPlayerAmmoPoints.get()))
+            newFile = (newFile.replace(currentAmmoPointsLine,   str(int(newPlayerAmmoPoints.get()))))
+
+
 
             print(newPlayerStages)
             print(newPlayerAmmoPoints.get())
 
             newLengthFile.write(newFile)
-            messagebox.showinfo("Saved")
+            messagebox.showinfo("Saved", "Values Saved")
             newLengthFile.flush()
             newLengthFile.close()
             playerSizeWindow.destroy()
@@ -81,6 +85,9 @@ def setPlayerArmySizeModule(rootWindow, aiDifficulty):
                 if not stageEntries[idx].get().isdigit():
                     stageEntries[idx].delete(0, END)
                     stageEntries[idx].insert(0, currentStagesArray[idx])
+
+            currentBudget.delete(0, END)
+            currentBudget.insert(0, currentAmmoPointsLine)
 
 
 
