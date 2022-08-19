@@ -3,8 +3,10 @@ from tkinter import *
 from tkinter import messagebox
 import re
 
+from help_functions import *
 
-def setStartingPlayerResources(rootWindow, aiDifficulty):
+
+def setStartingPlayerResources(rootWindow, fileToRead):
     resourceStartingWindow = Toplevel(rootWindow)
 
     resourceStartingWindow.title("Player Resources at the Start of the Campaign")
@@ -14,6 +16,10 @@ def setStartingPlayerResources(rootWindow, aiDifficulty):
     manPowerPoints = StringVar()
     starCallPoints = StringVar()
     ammoPoints = StringVar()
+    oldManPowerPoints = ""
+    oldStarCallPoints = ""
+    oldResearchPoints = ""
+    oldAmmoPoints = ""
 
     researchPointsSpin = Spinbox(resourceStartingWindow, from_=1.0, to=10000.0, textvariable=researchPoints)
     researchPointsSpin.grid(row=1, column=1)
@@ -24,19 +30,12 @@ def setStartingPlayerResources(rootWindow, aiDifficulty):
     ammoPointsSpin = Spinbox(resourceStartingWindow, from_=1.0, to=10000.0, textvariable=ammoPoints)
     ammoPointsSpin.grid(row=4, column=1)
 
-    # Get the file to read based on which difficulty is selected
-    fileToRead = "./resource/set/dynamic_campaign/dcg_normal.inc"
+    # Function used to grab the starting values given the file line
+    def getStartingLine(fileLine):
+        startingValueLine = linecache.getline(r"" + fileToRead, int(fileLine))
+        return startingValueLine
 
-    if aiDifficulty.get() == "performance":
-        fileToRead = "./resource/set/dynamic_campaign/dcg_easy.inc"
-    elif aiDifficulty.get() == "hard":
-        fileToRead = "./resource/set/dynamic_campaign/dcg_hard.inc"
-    elif aiDifficulty.get() == "unfair":
-        fileToRead = "./resource/set/dynamic_campaign/dcg_heroic.inc"
-
-    # Function used to grab the starting values given the file line    
-    def getStartingValues(fileLine):
-        currentLength = linecache.getline(r"" + fileToRead, int(fileLine))
+    def getCurrentStartingValue(currentLength):
         currentLengthFormat = r"StartVal +\d+"
         currentLength = str(re.search(currentLengthFormat, currentLength).group())
         currentLength = currentLength.strip()
@@ -49,17 +48,20 @@ def setStartingPlayerResources(rootWindow, aiDifficulty):
 
     lengthFile = open(fileToRead, "r")
     wholeFile = lengthFile.read()
-
-    manPowerPoints.set(getStartingValues(55))
+    oldManPowerPoints = getStartingLine(55)
+    manPowerPoints.set(getCurrentStartingValue(oldManPowerPoints))
     currentManPowerPoints = str(int(manPowerPoints.get()))
 
-    starCallPoints.set(getStartingValues(67))
+    oldStarCallPoints = getStartingLine(67)
+    starCallPoints.set(getCurrentStartingValue(oldStarCallPoints))
     currentStarCallPoints = str(int(starCallPoints.get()))
 
-    ammoPoints.set(getStartingValues(75))
+    oldAmmoPoints = getStartingLine(75)
+    ammoPoints.set(getCurrentStartingValue(oldAmmoPoints))
     currentAmmoPoints = str(int(ammoPoints.get()))
 
-    researchPoints.set(getStartingValues(84))
+    oldResearchPoints = getStartingLine(84)
+    researchPoints.set(getCurrentStartingValue(oldResearchPoints))
     currentResearchPoints = str(int(researchPoints.get()))
 
     def savechanges():
@@ -67,17 +69,21 @@ def setStartingPlayerResources(rootWindow, aiDifficulty):
             lengthFile = open(fileToRead, "w")
             manPowerPoints.get().isdigit()
             newManPowerPoints = str(int(manPowerPoints.get()))
+            newManPowerPoints = f"				{{StartVal " + newManPowerPoints + "}\n"
             starCallPoints.get().isdigit()
             newStarCallPoints = str(int(starCallPoints.get()))
+            newStarCallPoints = f"				{{StartVal " + newStarCallPoints + "}\n"
             ammoPoints.get().isdigit()
             newAmmoPoints = str(int(ammoPoints.get()))
+            newAmmoPoints = f"				{{StartVal " + newAmmoPoints + "}\n"
             researchPoints.get().isdigit()
             newResearchPoints = str(int(researchPoints.get()))
+            newResearchPoints = f"				{{StartVal " + newResearchPoints + "}\n"
 
-            newFile = (wholeFile.replace(currentManPowerPoints, newManPowerPoints))
-            newFile = (newFile.replace(currentStarCallPoints, newStarCallPoints))
-            newFile = (newFile.replace(currentAmmoPoints, newAmmoPoints))
-            newFile = (newFile.replace(currentResearchPoints, newResearchPoints))
+            newFile = (wholeFile.replace(oldManPowerPoints, newManPowerPoints))
+            newFile = (newFile.replace(oldStarCallPoints, newStarCallPoints))
+            newFile = (newFile.replace(oldAmmoPoints, newAmmoPoints))
+            newFile = (newFile.replace(oldResearchPoints, newResearchPoints))
 
             lengthFile.write(newFile)
             messagebox.showinfo("Saved", "Values Saved")
@@ -93,6 +99,7 @@ def setStartingPlayerResources(rootWindow, aiDifficulty):
             ammoPointsSpin.insert(0, currentAmmoPoints)
             researchPointsSpin.delete(0, END)
             researchPointsSpin.insert(0, currentResearchPoints)
+            resourceStartingWindow.focus_force()
 
     saveButton = Button(resourceStartingWindow, text="Save changes", command=savechanges)
     saveButton.grid(row=6, column=1, padx=3)

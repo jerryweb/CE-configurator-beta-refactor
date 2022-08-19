@@ -1,24 +1,14 @@
 from tkinter import *
 from tkinter import messagebox
 import re
+from help_functions import *
 
-
-def setAiArmySizeModule(rootWindow,aiDifficulty):
+def setAiArmySizeModule(rootWindow, fileToRead):
     aiSizeWindow = Toplevel(rootWindow)
 
     aiSizeWindow.title("AI Army Size")
     aiSizeWindow.geometry('700x150')
     aiSizeCurrent = ""
-
-    # Get the file to read based on which difficulty is selected
-    fileToRead = "./resource/set/dynamic_campaign/dcg_normal.inc"
-
-    if aiDifficulty.get() == "performance":
-        fileToRead = "./resource/set/dynamic_campaign/dcg_easy.inc"
-    elif aiDifficulty.get() == "hard":
-        fileToRead = "./resource/set/dynamic_campaign/dcg_hard.inc"
-    elif aiDifficulty.get() == "unfair":
-        fileToRead = "./resource/set/dynamic_campaign/dcg_heroic.inc"
 
     with open(fileToRead, "r") as lengthFile:
         wholeFile = lengthFile.read()
@@ -33,14 +23,16 @@ def setAiArmySizeModule(rootWindow,aiDifficulty):
             # Check that user input is an integer (number)
             try:
                 currentPoints.get().isdigit()
-                newPoints = int(currentPoints.get())
+                newPoints = float(currentPoints.get())
                 lengthFile.write(wholeFile.replace(currentLength4, str(f"BotResources {newPoints}")))
-                messagebox.showinfo("Saved")
+                messagebox.showinfo("Saved", "Values Saved")
                 aiSizeWindow.destroy()
             # If not reset it back to the default value
             except ValueError:
+                messagebox.showerror("Error", "Error, please enter a decimal number")
                 currentPoints.delete(0, END)
                 currentPoints.insert(0, currentLength5)
+                aiSizeWindow.focus_force()
 
     currentPoints = Entry(aiSizeWindow, textvariable=aiSizeCurrent, width=15)
     currentPoints.delete(0, END)

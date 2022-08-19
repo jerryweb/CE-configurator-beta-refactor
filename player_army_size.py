@@ -2,8 +2,9 @@ import linecache
 from tkinter import *
 from tkinter import messagebox
 import re
+from help_functions import *
 
-def setPlayerArmySizeModule(rootWindow, aiDifficulty):
+def setPlayerArmySizeModule(rootWindow, fileToRead):
     playerSizeWindow = Toplevel(rootWindow)
 
     playerSizeWindow.title("Player Army Size")
@@ -15,15 +16,7 @@ def setPlayerArmySizeModule(rootWindow, aiDifficulty):
 
     newPlayerAmmoPoints = StringVar()
 
-    # Get the file to read based on which difficulty is selected
-    fileToRead = "./resource/set/dynamic_campaign/dcg_normal.inc"
 
-    if aiDifficulty.get() == "performance":
-        fileToRead = "./resource/set/dynamic_campaign/dcg_easy.inc"
-    elif aiDifficulty.get() == "hard":
-        fileToRead = "./resource/set/dynamic_campaign/dcg_hard.inc"
-    elif aiDifficulty.get() == "unfair":
-        fileToRead = "./resource/set/dynamic_campaign/dcg_heroic.inc"
 
 
     lengthFile = open(fileToRead, "r")
@@ -58,19 +51,12 @@ def setPlayerArmySizeModule(rootWindow, aiDifficulty):
                 print(stageEntries[idx].get().isdigit())
                 newStages.append(str(int(stageSizesVariable[idx].get())))
 
-
-
             print("saving")
             newLengthFile = open(fileToRead, "w")
 
             newPlayerStages = " ".join(newStages)
             newFile = (wholeFile.replace(currentStagesLine, newPlayerStages))
             newFile = (newFile.replace(currentAmmoPointsLine,   str(int(newPlayerAmmoPoints.get()))))
-
-
-
-            print(newPlayerStages)
-            print(newPlayerAmmoPoints.get())
 
             newLengthFile.write(newFile)
             messagebox.showinfo("Saved", "Values Saved")
@@ -88,6 +74,7 @@ def setPlayerArmySizeModule(rootWindow, aiDifficulty):
 
             currentBudget.delete(0, END)
             currentBudget.insert(0, currentAmmoPointsLine)
+            playerSizeWindow.focus_force()
 
 
 

@@ -1,12 +1,17 @@
+from campaign_resource_income import *
+from game_length import *
 from player_army_size import *
+from resupply_enemy_equipment import *
 from starting_player_resources import *
+from supply_truck_regenerate_ammo import *
+from vanilla_or_mod_damage import *
 from war_period_logic import *
 from labels_text import *
 from ai_army_size import *
 
 root = Tk()
 root.title("Conquest Enhanced Configurator")
-root.geometry("600x600")
+root.geometry("650x600")
 
 # defined variables
 difficulty = StringVar(value="normal")
@@ -23,21 +28,48 @@ unfairRadiobutton = Radiobutton(root, text=unfairText, variable=difficulty, valu
 spacer = Label(root, text=spacerSize32)
 spacer.grid(row=1, column=2)
 
-settingsToModifyLabel = Label(root, text=settingsToModify)
-settingsToModifyLabel.grid(row=1, column=1)
+economyLabel = Label(root, text=economyText)
+economyLabel.grid(row=1, column=1)
+
+# Get the file to read based on which difficulty is selected
+fileToRead = getDifficultyFileToRead(difficulty=difficulty)
 
 # BUTTONS
 periodButton = Button(root, text="War period", command=lambda: setWarPeriodModule(rootWindow=root))
 periodButton.grid(row=2, column=1)
 
 aiArmyButton = Button(root, text="AI army size",
-                      command=lambda: setAiArmySizeModule(rootWindow=root, aiDifficulty=difficulty))
+                      command=lambda: setAiArmySizeModule(rootWindow=root, fileToRead=fileToRead))
 aiArmyButton.grid(row=3, column=1)
 playerArmyButton = Button(root, text="Player army size",
-                          command=lambda: setPlayerArmySizeModule(rootWindow=root, aiDifficulty=difficulty))
+                          command=lambda: setPlayerArmySizeModule(rootWindow=root, fileToRead=fileToRead))
 playerArmyButton.grid(row=4, column=1)
 
-resourcesStartButton = Button(root, text="Starting Player Resources", command=lambda: setStartingPlayerResources(rootWindow=root, aiDifficulty=difficulty))
+resourcesStartButton = Button(root, text="Starting Player Resources", command=lambda: setStartingPlayerResources(rootWindow=root, fileToRead=fileToRead))
 resourcesStartButton.grid(row=5,column=1)
+
+resourcesButton = Button(root, text="Resource Income", command=lambda: resourceIncome(rootWindow=root,fileToRead=fileToRead))
+resourcesButton.grid(row=6,column=1)
+
+spacer = Label(root, text=spacerSize32)
+spacer.grid(row=7, column=1)
+
+gameMechanicsLabel = Label(root, text=gameMechanicsText)
+gameMechanicsLabel.grid(row=8, column=1)
+
+resupply = Button(root, text="Toggle resupplying enemy equipment", command=lambda: resupplies(rootWindow=root))
+resupply.grid(row=9,column=1)
+
+regenerateAmmoButton = Button(root, text="Make supply trucks regenerate ammo", command=lambda: regenerateAmmo(rootWindow=root))
+regenerateAmmoButton.grid(row=10,column=1)
+
+gameLengthButton = Button(root, text="Victory Points Required to Win", command=lambda: gameLength(rootWindow=root))
+gameLengthButton.grid(row=11,column=1)
+
+damage = Button(root, text="Vanilla or Mod Damage Settings", command=lambda: damages(rootWindow=root))
+damage.grid(row=12,column=1)
+
+spacer = Label(root, text=spacerSize32)
+spacer.grid(row=13, column=1)
 
 root.mainloop()

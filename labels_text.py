@@ -1,8 +1,8 @@
 from tkinter import Label
 
 selectDifficultyText = "Please select a difficulty before changing other variables!"
-settingsToModify = "I want to modify:"
-
+economyText = "ECONOMY"
+gameMechanicsText = "GAME MECHANICS"
 
 performanceText = "Performance Mode (Easy)"
 normalText = "Normal"
