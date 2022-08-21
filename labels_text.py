@@ -3,6 +3,7 @@ from tkinter import Label
 selectDifficultyText = "Please select a difficulty before changing other variables!"
 economyText = "ECONOMY"
 gameMechanicsText = "GAME MECHANICS"
+aiLogicText = "AI LOGIC"
 
 performanceText = "Performance Mode (Easy)"
 normalText = "Normal"

@@ -45,11 +45,13 @@ playerArmyButton = Button(root, text="Player army size",
                           command=lambda: setPlayerArmySizeModule(rootWindow=root, fileToRead=fileToRead))
 playerArmyButton.grid(row=4, column=1)
 
-resourcesStartButton = Button(root, text="Starting Player Resources", command=lambda: setStartingPlayerResources(rootWindow=root, fileToRead=fileToRead))
-resourcesStartButton.grid(row=5,column=1)
+resourcesStartButton = Button(root, text="Starting Player Resources",
+                              command=lambda: setStartingPlayerResources(rootWindow=root, fileToRead=fileToRead))
+resourcesStartButton.grid(row=5, column=1)
 
-resourcesButton = Button(root, text="Resource Income", command=lambda: resourceIncome(rootWindow=root,fileToRead=fileToRead))
-resourcesButton.grid(row=6,column=1)
+resourcesButton = Button(root, text="Resource Income",
+                         command=lambda: resourceIncome(rootWindow=root, fileToRead=fileToRead))
+resourcesButton.grid(row=6, column=1)
 
 spacer = Label(root, text=spacerSize32)
 spacer.grid(row=7, column=1)
@@ -58,18 +60,22 @@ gameMechanicsLabel = Label(root, text=gameMechanicsText)
 gameMechanicsLabel.grid(row=8, column=1)
 
 resupply = Button(root, text="Toggle resupplying enemy equipment", command=lambda: resupplies(rootWindow=root))
-resupply.grid(row=9,column=1)
+resupply.grid(row=9, column=1)
 
-regenerateAmmoButton = Button(root, text="Make supply trucks regenerate ammo", command=lambda: regenerateAmmo(rootWindow=root))
-regenerateAmmoButton.grid(row=10,column=1)
+regenerateAmmoButton = Button(root, text="Make supply trucks regenerate ammo",
+                              command=lambda: regenerateAmmo(rootWindow=root))
+regenerateAmmoButton.grid(row=10, column=1)
 
 gameLengthButton = Button(root, text="Victory Points Required to Win", command=lambda: gameLength(rootWindow=root))
-gameLengthButton.grid(row=11,column=1)
+gameLengthButton.grid(row=11, column=1)
 
 damage = Button(root, text="Vanilla or Mod Damage Settings", command=lambda: damages(rootWindow=root))
-damage.grid(row=12,column=1)
+damage.grid(row=12, column=1)
 
 spacer = Label(root, text=spacerSize32)
 spacer.grid(row=13, column=1)
+
+gameMechanicsLabel = Label(root, text=aiLogicText)
+gameMechanicsLabel.grid(row=14, column=1)
 
 root.mainloop()

@@ -1,8 +1,7 @@
 import linecache
 from tkinter import *
 from tkinter import messagebox
-from tkinter.ttk import Button
-import re
+
 
 
 def gameLength(rootWindow):
@@ -11,7 +10,6 @@ def gameLength(rootWindow):
     lengthWindow.title("Victory Points Required to Win")
     lengthWindow.geometry('700x150')
     lengthWindow.focus_force()
-    # oldVictoryPoints= ""
 
     wholeFile = open("./resource/set/multiplayer/games/campaign_capture_the_flag.set", "r").read()
     oldVictoryPointsLine = linecache.getline(r"./resource/set/multiplayer/games/campaign_capture_the_flag.set", 44)

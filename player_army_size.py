@@ -16,9 +16,6 @@ def setPlayerArmySizeModule(rootWindow, fileToRead):
 
     newPlayerAmmoPoints = StringVar()
 
-
-
-
     lengthFile = open(fileToRead, "r")
     wholeFile = lengthFile.read()
     currentStagesLine = linecache.getline(r"" + fileToRead, 3)
