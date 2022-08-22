@@ -8,6 +8,7 @@ from vanilla_or_mod_damage import *
 from war_period_logic import *
 from labels_text import *
 from ai_army_size import *
+from ai_research_speed import *
 
 root = Tk()
 root.title("Conquest Enhanced Configurator")
@@ -77,5 +78,8 @@ spacer.grid(row=13, column=1)
 
 gameMechanicsLabel = Label(root, text=aiLogicText)
 gameMechanicsLabel.grid(row=14, column=1)
+
+aiResearchButton = Button(root, text="AI Research Speed Progression", command=lambda: aiResearches(rootWindow=root,fileToRead=fileToRead))
+aiResearchButton.grid(row=15,column=1)
 
 root.mainloop()
