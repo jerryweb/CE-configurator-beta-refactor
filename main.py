@@ -14,7 +14,7 @@ from ai_reinforcement_time import *
 
 root = Tk()
 root.title("Conquest Enhanced Configurator")
-root.geometry("650x600")
+root.geometry("800x600")
 
 # defined variables
 difficulty = StringVar(value="normal")
@@ -116,5 +116,13 @@ aiLogicRow += 1
 aiReinforcementTimeButton = Button(root, text="Defense Preparation Time (AI reinforcement Time)", command=lambda: preparationTime(rootWindow=root))
 aiReinforcementTimeButton.grid(row=aiLogicRow,column=1)
 aiLogicRow += 1
+
+def showhelp():
+    helpWindow = Toplevel(root)
+    textLabel = Label(helpWindow,text="This programme allows you to easily edit mod files. \n But the guide linked in the mod description \n is still the safest way to edit the game.\n If you have any questions about this programme please message me \n in discord linked in the description or in official GoH discord.").grid(row=5,column=2)
+
+Button(root, text="help", command=showhelp).grid(row=10,column=3)
+madeByLabel =Label(root, text="Made by MrCookie/ refactored by Hawka for Conquest Enhanced mod.\n The code will be available on github if you want to do\n use it for your mod.").grid (row=11,column=3)
+
 
 root.mainloop()
