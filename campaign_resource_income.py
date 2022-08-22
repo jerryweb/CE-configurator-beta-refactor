@@ -1,8 +1,7 @@
-import linecache
 from tkinter import *
 from tkinter import messagebox
 import re
-
+from help_functions import *
 
 def resourceIncome(rootWindow, fileToRead):
     resourceIncWindow = Toplevel(rootWindow)
@@ -13,9 +12,9 @@ def resourceIncome(rootWindow, fileToRead):
     lowRisk = StringVar()
     standardRisk = StringVar()
     highRisk = StringVar()
-    oldLowRisk = ""
-    oldStandardRisk = ""
-    oldHighRisk = ""
+    # oldLowRisk = ""
+    # oldStandardRisk = ""
+    # oldHighRisk = ""
 
     lowRiskspin = Spinbox(resourceIncWindow, from_=1.00, to=100.00, textvariable=lowRisk)
     lowRiskspin.grid(row=3,column=1)
@@ -28,9 +27,9 @@ def resourceIncome(rootWindow, fileToRead):
     wholeFile = lengthFile.read()
 
     # Function used to grab the starting values given the file line
-    def getStartingLine(fileLine):
-        startingValueLine = linecache.getline(r"" + fileToRead, int(fileLine))
-        return startingValueLine
+    # def getStartingLine(fileLine):
+    #     startingValueLine = linecache.getline(r"" + fileToRead, int(fileLine))
+    #     return startingValueLine
 
     def getCurrentRewardStartingValue(currentLength):
         currentLengthFormat = r"Rewards +\d+"
@@ -45,15 +44,15 @@ def resourceIncome(rootWindow, fileToRead):
 
     wholeFile = open(fileToRead, "r").read()
 
-    oldLowRisk = getStartingLine(39)
+    oldLowRisk = getStartingLine(39, fileToRead=fileToRead)
     lowRisk.set(getCurrentRewardStartingValue(oldLowRisk))
     currentLowRisk = str(float(lowRisk.get()))
 
-    oldStandardRisk = getStartingLine(44)
+    oldStandardRisk = getStartingLine(44, fileToRead=fileToRead)
     standardRisk.set(getCurrentRewardStartingValue(oldStandardRisk))
     currentStandardRisk = str(float(standardRisk.get()))
 
-    oldHighRisk = getStartingLine(49)
+    oldHighRisk = getStartingLine(49, fileToRead=fileToRead)
     highRisk.set(getCurrentRewardStartingValue(oldHighRisk))
     currentHighRisk = str(float(highRisk.get()))
 
@@ -69,6 +68,7 @@ def resourceIncome(rootWindow, fileToRead):
             newFile = (newFile.replace(oldHighRisk, f"            {{Rewards " + str(float(highRisk.get())) + "}\n"))
 
             lengthFile.write(newFile)
+            lengthFile.close()
             messagebox.showinfo("Saved", "Values Saved")
             resourceIncWindow.destroy()
 
@@ -86,5 +86,5 @@ def resourceIncome(rootWindow, fileToRead):
     saveButton = Button(resourceIncWindow, text="Save changes", command=savechanges)
     saveButton.grid(row=6, column=1, padx=3)
 
-    infoLabel = Label (resourceIncWindow, text="This is a multiplier depending on the risk level (Stars) of the mission.\n First is 1 star,second is 2 star and third is 3 star.")
+    infoLabel = Label (resourceIncWindow, text="This is a multiplier (decimal number) depending on the risk level (Stars) of the mission.\n First is 1 star,second is 2 star and third is 3 star.")
     infoLabel.grid(row=1, column=1, padx=3)

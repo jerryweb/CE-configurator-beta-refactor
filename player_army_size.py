@@ -9,6 +9,7 @@ def setPlayerArmySizeModule(rootWindow, fileToRead):
 
     playerSizeWindow.title("Player Army Size")
     playerSizeWindow.geometry('700x250')
+    playerSizeWindow.focus_force()
     stageSizesVariable = [StringVar()]
 
     for i in range(6):
@@ -63,6 +64,7 @@ def setPlayerArmySizeModule(rootWindow, fileToRead):
 
         except ValueError:
             print("Error, please enter an integer (number)")
+            playerSizeWindow.focus_force()
             messagebox.showerror("Error", "Error, please enter an integer (number)")
             for idx in range(len(stageSizesVariable)):
                 if not stageEntries[idx].get().isdigit():
@@ -71,7 +73,6 @@ def setPlayerArmySizeModule(rootWindow, fileToRead):
 
             currentBudget.delete(0, END)
             currentBudget.insert(0, currentAmmoPointsLine)
-            playerSizeWindow.focus_force()
 
 
 

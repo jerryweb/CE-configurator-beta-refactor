@@ -36,17 +36,17 @@
 		{Low
 			{BotResources 7.0}
 			{BotVeterancy 1}
-			{Rewards 1.0}
+            {Rewards 1.0}
 		}
 		{Standard
 			{BotResources 7.0}
 			{BotVeterancy 3}
-			{Rewards 1.5}
+            {Rewards 1.5}
 		}
 		{High
 			{BotResources 7.0}
 			{BotVeterancy 5}
-			{Rewards 2.00}
+            {Rewards 2.0}
 		}
 	}
 	{Resources
